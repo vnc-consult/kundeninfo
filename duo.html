@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Hướng dẫn Datev UO - Buchhaltungsservice Vu Ngoc Chan</title>
+  <meta name="description" content="Trang hướng dẫn khách hàng sử dụng DATEV Unternehmen online: SmartLogin, tải chứng từ, kết nối ngân hàng và xem Auswertungen." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #003a5d 0%, #005d91 100%);
+    }
+
+    .text-datev {
+      color: #64b42d;
+    }
+
+    .bg-datev {
+      background-color: #64b42d;
+    }
+
+    .border-datev {
+      border-color: #64b42d;
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-5px);
+    }
+
+    .guide-card.active {
+      border-color: #64b42d;
+      box-shadow: 0 15px 35px rgba(100, 180, 45, 0.18);
+      transform: translateY(-3px);
+    }
+
+    .upload-mode-btn.active {
+      background-color: #64b42d;
+      color: white;
+      border-color: #64b42d;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header / Navigation -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+
+        <!-- Logo -->
+        <a href="index.html#home" class="flex items-center">
+          <div class="text-xl md:text-2xl font-bold text-blue-900 flex flex-col leading-tight">
+            <span>Buchhaltungsservice</span>
+            <span class="text-datev">Vu Ngoc Chan</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 font-medium">
+          <a href="index.html#home" class="hover:text-green-600 transition">Trang chủ</a>
+          <a href="index.html#services" class="hover:text-green-600 transition">Dịch vụ</a>
+          <a href="#intro" class="text-datev font-semibold transition">Datev UO</a>
+          <a href="#contact" class="hover:text-green-600 transition">Liên hệ</a>
+        </div>
+
+        <!-- Desktop CTA -->
+        <a href="#contact" class="hidden sm:inline-block bg-datev text-white px-4 md:px-6 py-2 rounded-full font-semibold hover:opacity-90 transition shadow-lg text-sm md:text-base">
+          Liên hệ ngay
+        </a>
+
+        <!-- Mobile Button -->
+        <button id="mobile-menu-button" type="button" class="md:hidden text-blue-900 text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden pb-5">
+        <div class="flex flex-col space-y-3 font-medium">
+          <a href="index.html#home" class="mobile-link hover:text-green-600 transition">Trang chủ</a>
+          <a href="index.html#services" class="mobile-link hover:text-green-600 transition">Dịch vụ</a>
+          <a href="#intro" class="mobile-link text-datev font-semibold transition">Datev UO</a>
+          <a href="#contact" class="mobile-link hover:text-green-600 transition">Liên hệ</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="intro" class="hero-gradient text-white py-20 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+
+      <div class="md:w-1/2">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-white">
+          Số hóa kế toán cùng
+          <span class="text-datev whitespace-nowrap">DATEV Unternehmen online</span>
+        </h1>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#setup" class="bg-white text-blue-900 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-xl">
+            Bắt đầu sử dụng
+          </a>
+          <a href="#guides" class="border border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-blue-900 transition">
+            Xem hướng dẫn
+          </a>
+        </div>
+      </div>
+
+      <div class="md:w-5/12 bg-white/10 p-4 rounded-2xl backdrop-blur-sm">
+        <div class="bg-white rounded-xl shadow-2xl p-6 text-gray-800">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-green-100 text-datev rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-shield-alt text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold">Làm việc số hóa, an toàn</h3>
+          </div>
+
+          <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+            Chứng từ được truyền qua hệ thống DATEV. Việc đăng nhập sử dụng phương thức xác thực bảo mật như DATEV SmartLogin hoặc SmartCard.
+          </p>
+
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center"><i class="fas fa-check text-datev mr-2"></i> Giảm gửi chứng từ giấy</li>
+            <li class="flex items-center"><i class="fas fa-check text-datev mr-2"></i> Tra cứu chứng từ dễ hơn</li>
+            <li class="flex items-center"><i class="fas fa-check text-datev mr-2"></i> Có thể kết nối ngân hàng khi được kích hoạt</li>
+            <li class="flex items-center"><i class="fas fa-check text-datev mr-2"></i> Truy cập Auswertungen và tài liệu kế toán mọi lúc</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Key Steps Section -->
+  <section id="setup" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">
+          Quy trình triển khai đơn giản
+        </h2>
+        <div class="w-20 h-1 bg-datev mx-auto"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="card-hover bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
+          <div class="text-4xl font-bold text-green-200 mb-4">01</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
+            Đăng ký & kích hoạt
+          </h3>
+          <p class="text-gray-600 leading-relaxed text-base">
+            Chúng tôi đăng ký DATEV Unternehmen online cho bạn. Sau đó bạn tải ứng dụng <strong>DATEV SmartLogin</strong> hoặc dùng phương thức truy cập đã được cấp.
+          </p>
+        </div>
+
+        <div class="card-hover bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
+          <div class="text-4xl font-bold text-green-200 mb-4">02</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
+            Số hóa chứng từ
+          </h3>
+          <p class="text-gray-600 leading-relaxed text-base">
+            Chụp ảnh hoặc quét hóa đơn đầu vào, hóa đơn đầu ra, biên lai, chứng từ tiền mặt qua <strong>DATEV Upload mobil</strong> hoặc tải lên bằng máy tính.
+          </p>
+        </div>
+
+        <div class="card-hover bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
+          <div class="text-4xl font-bold text-green-200 mb-4">03</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
+            Gửi cho văn phòng
+          </h3>
+          <p class="text-gray-600 leading-relaxed text-base">
+            Dữ liệu được chuyển đến văn phòng chúng tôi để xử lý kế toán. Chứng từ gốc vẫn cần được doanh nghiệp lưu giữ theo quy định hiện hành.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Guides Section -->
+  <section id="guides" class="py-20 bg-blue-50">
+    <div class="max-w-7xl mx-auto px-4">
+
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">
+          Tài liệu dành cho khách hàng
+        </h2>
+        <p class="text-gray-600 max-w-3xl mx-auto">
+          Chọn một chủ đề bên dưới để xem hướng dẫn chi tiết. Các mục này giúp khách hàng tự thao tác DATEV Unternehmen online nhanh hơn và giảm sai sót khi gửi chứng từ cho văn phòng.
+        </p>
+      </div>
+
+      <!-- 4 clickable guide cards -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+
+        <button type="button" data-guide="smartlogin" class="guide-card active text-left flex items-start p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition border-l-4 border-datev">
+          <i class="fas fa-mobile-alt text-red-500 text-3xl mr-4 mt-1"></i>
+          <div>
+            <h4 class="font-bold text-lg text-blue-900">Hướng dẫn SmartLogin</h4>
+            <p class="text-sm text-gray-500 mt-1">Thiết lập, đăng nhập và bảo mật tài khoản.</p>
+            <span class="inline-block mt-4 text-sm font-semibold text-datev">Xem hướng dẫn <i class="fas fa-arrow-right ml-1"></i></span>
+          </div>
+        </button>
+
+        <button type="button" data-guide="upload" class="guide-card text-left flex items-start p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition border-l-4 border-gray-200">
+          <i class="fas fa-upload text-blue-500 text-3xl mr-4 mt-1"></i>
+          <div>
+            <h4 class="font-bold text-lg text-blue-900">Tải chứng từ lên DUO</h4>
+            <p class="text-sm text-gray-500 mt-1">Upload hóa đơn, Kassenbon, hợp đồng.</p>
+            <span class="inline-block mt-4 text-sm font-semibold text-datev">Xem hướng dẫn <i class="fas fa-arrow-right ml-1"></i></span>
+          </div>
+        </button>
+
+        <button type="button" data-guide="bank" class="guide-card text-left flex items-start p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition border-l-4 border-gray-200">
+          <i class="fas fa-university text-green-600 text-3xl mr-4 mt-1"></i>
+          <div>
+            <h4 class="font-bold text-lg text-blue-900">Kết nối ngân hàng</h4>
+            <p class="text-sm text-gray-500 mt-1">Bank online và đối chiếu giao dịch.</p>
+            <span class="inline-block mt-4 text-sm font-semibold text-datev">Xem hướng dẫn <i class="fas fa-arrow-right ml-1"></i></span>
+          </div>
+        </button>
+
+        <button type="button" data-guide="auswertung" class="guide-card text-left flex items-start p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition border-l-4 border-gray-200">
+          <i class="fas fa-chart-line text-purple-600 text-3xl mr-4 mt-1"></i>
+          <div>
+            <h4 class="font-bold text-lg text-blue-900">Belege & Auswertungen</h4>
+            <p class="text-sm text-gray-500 mt-1">Kiểm tra chứng từ và xem báo cáo.</p>
+            <span class="inline-block mt-4 text-sm font-semibold text-datev">Xem hướng dẫn <i class="fas fa-arrow-right ml-1"></i></span>
+          </div>
+        </button>
+
+      </div>
+
+      <!-- Detailed content area -->
+      <div id="guide-content" class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+
+        <!-- SmartLogin Guide -->
+        <div class="guide-detail" data-content="smartlogin">
+          <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-0">
+
+            <div class="p-8 md:p-10">
+              <div class="flex items-center mb-6">
+                <div class="w-14 h-14 rounded-full bg-red-100 text-red-500 flex items-center justify-center mr-4">
+                  <i class="fas fa-mobile-alt text-2xl"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-datev uppercase tracking-wide">Tài liệu 01</p>
+                  <h3 class="text-2xl md:text-3xl font-bold text-blue-900">
+                    Thiết lập DATEV SmartLogin lần đầu
+                  </h3>
+                </div>
+              </div>
+
+              <p class="text-gray-600 mb-8 leading-relaxed">
+                DATEV SmartLogin là ứng dụng dùng để xác nhận danh tính khi đăng nhập DATEV Unternehmen online. Khách hàng cần cài đặt và kích hoạt ứng dụng trước khi có thể tải chứng từ hoặc xem tài liệu online.
+              </p>
+
+              <div class="space-y-5">
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Chuẩn bị trước khi bắt đầu</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Chuẩn bị điện thoại đang dùng thường xuyên, thư đăng ký DATEV hoặc mã kích hoạt, email đã đăng ký với văn phòng và kết nối internet ổn định. Nên thực hiện khi có khoảng 10–15 phút yên tĩnh để tránh bị gián đoạn.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Tải ứng dụng DATEV SmartLogin</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Mở App Store trên iPhone hoặc Google Play trên Android. Tìm ứng dụng <strong>DATEV SmartLogin</strong> và cài đặt. Nên kiểm tra đúng tên ứng dụng và nhà cung cấp là DATEV trước khi tải.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Bấm “Jetzt registrieren”</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Sau khi cài đặt xong, mở app DATEV SmartLogin trên điện thoại, bấm <strong>Jetzt registrieren</strong>. Nếu app hiển thị Sicherheitshinweis hoặc thông báo bảo mật, hãy đọc ngắn gọn rồi bấm <strong>Weiter</strong> hoặc nút tiếp tục tương ứng.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Quét QR-Code trên thư đăng ký</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Mở thư đăng ký DATEV/Registrierungsbrief và quét QR-Code bằng app. Khi quét, để giấy trên mặt phẳng, đủ ánh sáng và giữ điện thoại ổn định để mã QR nằm rõ trong khung camera.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">5</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Nếu không quét được, nhập thủ công</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Nếu QR-Code không quét được, chọn cách nhập thủ công. Nhập đúng <strong>SmartLogin-ID</strong> và <strong>Registrierungscode</strong> theo thư đăng ký. Chú ý không nhầm chữ O với số 0, chữ I với số 1 và không nhập thừa khoảng trắng.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">6</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Tạo mật khẩu hoặc PIN cho SmartLogin</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      App sẽ yêu cầu tạo mật khẩu/PIN theo hướng dẫn. Hãy chọn mật khẩu đủ an toàn và dễ nhớ với bạn. Không gửi mật khẩu, PIN, ảnh QR-Code hoặc mã đăng ký cho người khác qua WhatsApp, email hoặc tin nhắn.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">7</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Xác nhận email kích hoạt nếu được yêu cầu</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Sau khi đăng ký trong app, DATEV có thể gửi email xác nhận đến địa chỉ đã đăng ký. Mở email đó và bấm vào link kích hoạt/Aktivierungslink. Nếu không thấy email, hãy kiểm tra Spam/Junk hoặc hỏi văn phòng kiểm tra lại email đã đăng ký.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">8</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Kiểm tra SmartLogin đã sẵn sàng</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Sau khi kích hoạt, mở lại app DATEV SmartLogin. Nếu app hiển thị trạng thái sẵn sàng hoặc tài khoản SmartLogin đã được đăng ký, bạn có thể dùng app này để xác nhận đăng nhập vào DATEV Unternehmen online.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">9</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Thử đăng nhập vào DATEV Unternehmen online</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Trên máy tính hoặc điện thoại, mở DATEV Unternehmen online. Khi hệ thống yêu cầu xác nhận, chọn DATEV SmartLogin. Nếu đăng nhập trên máy tính, hệ thống thường hiển thị một mã/QR-Code trên màn hình. Mở app SmartLogin trên điện thoại để quét mã đó hoặc xác nhận đăng nhập, sau đó nhập PIN nếu được yêu cầu.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">10</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Kiểm tra quyền truy cập sau khi đăng nhập</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Sau khi đăng nhập thành công, kiểm tra xem bạn có nhìn thấy đúng công ty và các mục cần dùng như Belege, Upload hoặc Auswertungen hay không. Nếu không thấy mục cần dùng, hãy chụp màn hình và gửi cho văn phòng để kiểm tra quyền truy cập.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">11</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Lưu ý khi đổi điện thoại hoặc mất điện thoại</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Nếu đổi điện thoại, mất điện thoại, đổi người phụ trách hoặc không còn truy cập được app SmartLogin, vui lòng báo ngay cho văn phòng. Không tự xóa app hoặc cài lại nhiều lần nếu chưa chắc cách xử lý, vì có thể cần cấp lại quyền hoặc mã đăng ký mới.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="mt-8 p-5 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-yellow-900">
+                <strong>Lưu ý:</strong> Nếu gặp lỗi, vui lòng chụp màn hình lỗi và gửi cho văn phòng. Ảnh chụp màn hình giúp văn phòng nhận biết nhanh lỗi do mã hết hạn, email chưa kích hoạt, sai thông tin đăng ký hay vấn đề quyền truy cập.
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-gray-100">
+              <h4 class="text-xl font-bold text-blue-900 mb-5">
+                Khách hàng cần chuẩn bị
+              </h4>
+
+              <ul class="space-y-4 text-sm text-gray-600">
+                <li class="flex gap-3">
+                  <i class="fas fa-check-circle text-datev mt-1"></i>
+                  <span>Điện thoại đang dùng thường xuyên và có kết nối internet.</span>
+                </li>
+                <li class="flex gap-3">
+                  <i class="fas fa-check-circle text-datev mt-1"></i>
+                  <span>Thư đăng ký DATEV, QR-Code hoặc mã kích hoạt.</span>
+                </li>
+                <li class="flex gap-3">
+                  <i class="fas fa-check-circle text-datev mt-1"></i>
+                  <span>Email đã đăng ký với văn phòng để nhận link xác nhận nếu cần.</span>
+                </li>
+                <li class="flex gap-3">
+                  <i class="fas fa-check-circle text-datev mt-1"></i>
+                  <span>Khoảng 10–15 phút để cài app, kích hoạt và thử đăng nhập.</span>
+                </li>
+              </ul>
+
+              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Lỗi thường gặp</h5>
+                <ul class="space-y-2 text-sm text-gray-600">
+                  <li class="flex gap-2">
+                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
+                    <span>Không nhận được email xác nhận.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
+                    <span>Link kích hoạt hoặc mã đăng ký đã hết hạn.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
+                    <span>Quét QR-Code không được.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
+                    <span>Nhập sai SmartLogin-ID hoặc Registrierungscode.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
+                    <span>Đổi điện thoại hoặc mất điện thoại.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
+                    <span>App không hiện thông báo xác nhận đăng nhập.</span>
+                  </li>
+                </ul>
+
+                <p class="mt-4 pt-4 border-t border-gray-200 text-sm text-gray-600">
+                  Trong các trường hợp này, vui lòng gửi ảnh chụp màn hình lỗi cho văn phòng để được hỗ trợ.
+                </p>
+              </div>
+
+              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Không nên làm</h5>
+                <p class="text-sm text-gray-600">
+                  Không chia sẻ PIN, mật khẩu, mã đăng ký hoặc ảnh QR-Code cho người khác. Không tự xóa app, cài lại nhiều lần hoặc chuyển điện thoại khi chưa chắc cách xử lý.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upload Guide -->
+        <div class="guide-detail hidden" data-content="upload">
+          <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-0">
+            <div class="p-8 md:p-10">
+              <div class="flex items-center mb-6">
+                <div class="w-14 h-14 rounded-full bg-blue-100 text-blue-500 flex items-center justify-center mr-4">
+                  <i class="fas fa-cloud-upload-alt text-2xl"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-datev uppercase tracking-wide">Tài liệu 02</p>
+                  <h3 class="text-2xl md:text-3xl font-bold text-blue-900">Tải chứng từ lên Datev UO</h3>
+                </div>
+              </div>
+
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Bạn có thể gửi chứng từ lên DATEV theo 3 cách. Hãy chọn đúng cách phù hợp để việc xử lý kế toán nhanh hơn và hạn chế gửi trùng.
+              </p>
+
+              <div class="flex flex-wrap gap-3 mb-8">
+                <button type="button" data-upload-mode="phone" class="upload-mode-btn active px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">Upload bằng điện thoại</button>
+                <button type="button" data-upload-mode="desktop" class="upload-mode-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">Upload bằng máy tính</button>
+                <button type="button" data-upload-mode="mail" class="upload-mode-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">Upload Mail</button>
+              </div>
+
+              <div class="upload-mode-content" data-upload-content="phone">
+                <div class="bg-blue-50 rounded-xl p-5 border border-blue-100 mb-6">
+                  <h4 class="font-bold text-blue-900 mb-2">
+                    <i class="fas fa-mobile-alt mr-2"></i>Upload bằng điện thoại
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    Phù hợp cho hóa đơn giấy, Kassenbon, Bewirtungsbeleg, hóa đơn xăng xe, hóa đơn mua hàng tại cửa hàng hoặc chứng từ cần gửi nhanh khi đang ở ngoài văn phòng.
+                  </p>
+                </div>
+
+                <div class="space-y-5">
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Chuẩn bị chứng từ trước khi chụp</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Đặt hóa đơn hoặc Kassenbon trên mặt phẳng, nền sáng và đủ ánh sáng. Vuốt phẳng giấy nếu bị gấp. Nếu chứng từ bị nhàu, quá tối hoặc chữ quá nhỏ, hãy kiểm tra kỹ để đảm bảo nội dung vẫn đọc được.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Mở app DATEV Upload mobil</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Mở app DATEV Upload mobil trên điện thoại. Nếu app yêu cầu đăng nhập, hãy xác nhận bằng DATEV SmartLogin và nhập PIN trong SmartLogin nếu được yêu cầu.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Bấm dấu “+” hoặc nút thêm chứng từ</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Trong app, bấm dấu “+”, “Beleg hinzufügen”, “Foto aufnehmen” hoặc nút tương tự để thêm chứng từ mới. Nếu file đã có sẵn trong điện thoại, có thể chọn ảnh/file từ điện thoại hoặc dùng chức năng chia sẻ sang DATEV Upload mobil.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Chụp đủ 4 góc của chứng từ</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Khi chụp, giữ điện thoại thẳng, không nghiêng quá nhiều. Chứng từ cần nằm trọn trong khung hình, không bị cắt mất góc, ngày, số tiền, VAT/USt, tên nhà cung cấp hoặc số hóa đơn.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">5</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Kiểm tra ảnh sau khi chụp</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Sau khi chụp, phóng to kiểm tra nhanh xem chữ có rõ không. Nếu ảnh bị mờ, bị bóng đèn, bị tối, bị cắt mất nội dung hoặc không đọc được số tiền, hãy xóa ảnh đó và chụp lại ngay.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">6</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Thêm trang nếu chứng từ có nhiều trang</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Nếu hóa đơn, hợp đồng hoặc chứng từ có nhiều trang, hãy chụp đủ tất cả các trang vào cùng một chứng từ trước khi upload. Không nên gửi thiếu trang hoặc tách các trang của cùng một hóa đơn thành nhiều chứng từ khác nhau.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">7</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Mỗi hóa đơn nên là một chứng từ riêng</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Mỗi hóa đơn, mỗi Kassenbon hoặc mỗi chứng từ nên được upload riêng. Không nên chụp nhiều hóa đơn khác nhau trong cùng một ảnh và cũng không nên gom nhiều hóa đơn khác nhau vào cùng một chứng từ.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">8</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Đặt tên chứng từ đúng theo yêu cầu</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Vui lòng đặt tên chứng từ ngắn gọn theo mẫu của văn phòng:<br>
+                        <strong>YYYY-MM-DD_TenNganGon_PhanLoai</strong><br>
+                        Ví dụ:<br>
+                        <strong>2026-01-15_Telekom_Bank</strong><br>
+                        <strong>2026-01-20_Rewe_Bar</strong><br>
+                        <strong>2026-01-01_Miete_Vertrag</strong><br>
+                        <strong>2026-01-31_ZBon_Kasse</strong>.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">9</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Chọn đúng loại chứng từ</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Khi hệ thống yêu cầu, chọn đúng loại như <strong>Eingangsrechnung</strong> (hóa đơn mua vào), <strong>Ausgangsrechnung</strong> (hóa đơn bán ra), <strong>Kasse</strong> (tiền mặt/Kassenbon) hoặc <strong>Sonstiges</strong> (khác).
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">10</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Upload chứng từ</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Sau khi kiểm tra ảnh và thông tin, bấm “Upload”, “Zum Upload”, biểu tượng đám mây hoặc nút gửi tương tự trong app. Nếu app hỏi xác nhận, hãy xác nhận để bắt đầu tải chứng từ lên DATEV.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">11</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Chờ thông báo upload thành công</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Không đóng app ngay sau khi bấm upload. Hãy chờ đến khi app báo upload thành công hoặc chứng từ xuất hiện trong danh sách đã gửi. Nếu mạng yếu, quá trình upload có thể mất lâu hơn một chút.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">12</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Không gửi trùng chứng từ</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Nếu chứng từ đã upload thành công bằng điện thoại, thông thường không cần gửi lại qua máy tính, email hoặc Upload Mail. Gửi trùng có thể làm chứng từ bị kiểm tra hai lần và làm chậm quá trình xử lý.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8 p-5 bg-red-50 border border-red-100 rounded-xl text-sm text-red-900">
+                  <strong>Quan trọng:</strong> Chứng từ đã upload lên DATEV không có nghĩa là được phép vứt bản gốc ngay. Doanh nghiệp vẫn cần lưu giữ chứng từ gốc theo quy định hiện hành.
+                </div>
+              </div>
+
+              <div class="upload-mode-content hidden" data-upload-content="desktop">
+                <div class="bg-purple-50 rounded-xl p-5 border border-purple-100 mb-6">
+                  <h4 class="font-bold text-blue-900 mb-2">
+                    <i class="fas fa-laptop mr-2"></i>Upload bằng máy tính
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    Phù hợp cho hóa đơn PDF nhận qua email, hợp đồng, tài liệu scan nhiều trang, sao kê, Z-Bon, Rechnung hoặc các file đã lưu sẵn trên máy tính.
+                  </p>
+                </div>
+
+                <div class="space-y-5">
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Lưu file chứng từ về máy tính</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Nếu bạn nhận hóa đơn qua email, hãy tải file đính kèm về máy tính trước. Có thể lưu vào thư mục dễ tìm, ví dụ <strong>Desktop</strong>, <strong>Downloads</strong> hoặc một thư mục riêng tên <strong>Belege 2026</strong>. Không nên chỉ mở file trong email rồi đóng lại, vì sau đó có thể khó tìm file để upload.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Kiểm tra file có đọc được rõ không</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Mở thử file trước khi upload. Kiểm tra xem hóa đơn có đủ ngày, số tiền, VAT/USt, tên nhà cung cấp, số hóa đơn và tất cả các trang hay không. Nếu file bị mờ, bị nghiêng, thiếu trang hoặc không mở được, vui lòng scan/chụp lại trước khi gửi.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Mỗi hóa đơn nên là một file riêng</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Một hóa đơn hoặc một chứng từ nên được upload thành một file riêng. Không nên gom nhiều hóa đơn khác nhau vào cùng một file PDF. Nếu một hóa đơn có nhiều trang, hãy ghép đủ các trang của hóa đơn đó vào cùng một file.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Đặt tên file dễ hiểu</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Đặt tên file ngắn gọn theo mẫu của văn phòng:<br>
+                        <strong>YYYY-MM-DD_TenNganGon_PhanLoai</strong><br>
+                        Ví dụ:<br>
+                        <strong>2026-01-15_Telekom_Bank.pdf</strong><br>
+                        <strong>2026-01-20_Rewe_Bar.pdf</strong><br>
+                        <strong>2026-01-01_Miete_Vertrag.pdf</strong><br>
+                        <strong>2026-01-31_ZBon_Kasse.pdf</strong>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">5</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Mở trang DATEV Upload online</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Mở trình duyệt trên máy tính, ví dụ Chrome, Edge, Safari hoặc Firefox. Sau đó mở link DATEV Upload online do văn phòng cung cấp hoặc đăng nhập vào DATEV Unternehmen online rồi chọn chức năng upload chứng từ.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">6</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Đăng nhập bằng SmartLogin</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Khi hệ thống yêu cầu đăng nhập, chọn DATEV SmartLogin hoặc phương thức truy cập đã được cấp. Sau đó mở app DATEV SmartLogin trên điện thoại, xác nhận đăng nhập và nhập PIN nếu được yêu cầu. Nếu điện thoại không hiện thông báo, hãy mở app SmartLogin thủ công để kiểm tra.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">7</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Bấm nút chọn file</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Trong DATEV Upload online, bấm nút như <strong>Datei auswählen</strong>, <strong>Dateien hochladen</strong>, <strong>Beleg hochladen</strong> hoặc kéo file vào khu vực upload nếu hệ thống cho phép. Sau đó tìm đến thư mục bạn đã lưu file, ví dụ Downloads hoặc Desktop, rồi chọn file cần gửi.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">8</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Chọn một hoặc nhiều file</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Có thể chọn nhiều file cùng lúc nếu các file đã được chuẩn bị đúng. Với khách hàng chưa quen máy tính, nên upload từng nhóm nhỏ, ví dụ 5–10 file một lần, để dễ kiểm tra và tránh gửi nhầm.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">9</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Chọn đúng loại chứng từ nếu hệ thống yêu cầu</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Chọn đúng loại như <strong>Eingangsrechnung</strong> (hóa đơn mua vào), <strong>Ausgangsrechnung</strong> (hóa đơn bán ra), <strong>Kasse</strong> (tiền mặt/Kassenbon) hoặc <strong>Sonstiges</strong> (khác). Nếu không chắc nên chọn loại nào, hãy ghi chú hoặc hỏi văn phòng trước khi gửi nhiều chứng từ.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">10</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Bấm upload và chờ hệ thống xử lý</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Sau khi chọn file, bấm nút upload/gửi nếu hệ thống yêu cầu. Không đóng trình duyệt ngay. Hãy chờ đến khi hệ thống báo upload thành công hoặc file xuất hiện trong danh sách chứng từ đã gửi.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">11</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Kiểm tra lại sau khi upload</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Sau khi upload xong, kiểm tra lại tên file, số lượng file và tháng chứng từ. Nếu bạn vừa upload 8 file thì trong danh sách cũng nên thấy đủ 8 file. Nếu thiếu file hoặc hệ thống báo lỗi, hãy thử upload lại file đó hoặc gửi ảnh màn hình lỗi cho văn phòng.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">12</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Không gửi trùng chứng từ</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Nếu file đã upload thành công bằng máy tính, thông thường không cần gửi lại qua điện thoại, email hoặc Upload Mail. Gửi trùng có thể làm chứng từ bị kiểm tra hai lần và làm chậm quá trình xử lý.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8 p-5 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-yellow-900">
+                  <strong>Lưu ý:</strong> Khách hàng không cần thao tác phức tạp. Chỉ cần lưu file về máy, kiểm tra file rõ ràng, upload lên DATEV và chờ thông báo thành công. Nếu không chắc ở bước nào, hãy chụp màn hình và gửi cho văn phòng để được hỗ trợ.
+                </div>
+              </div>
+
+              <div class="upload-mode-content hidden" data-upload-content="mail">
+                <div class="bg-green-50 rounded-xl p-5 border border-green-100 mb-6">
+                  <h4 class="font-bold text-blue-900 mb-2">
+                    <i class="fas fa-envelope mr-2"></i>Upload Mail
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    Phù hợp cho hóa đơn điện tử nhận qua email, ví dụ hóa đơn điện thoại, internet, phần mềm, Amazon, Lieferanten-Rechnung hoặc các nhà cung cấp gửi PDF định kỳ.
+                  </p>
+                </div>
+
+                <div class="space-y-5">
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Kiểm tra chức năng Upload Mail đã được thiết lập</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Upload Mail chỉ dùng được khi văn phòng đã thiết lập địa chỉ Upload Mail riêng cho doanh nghiệp. Nếu bạn chưa nhận được địa chỉ này, vui lòng hỏi văn phòng trước khi sử dụng.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Mở email có hóa đơn</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Mở email của nhà cung cấp có đính kèm hóa đơn. Trước khi gửi, kiểm tra nhanh xem email có đúng hóa đơn của doanh nghiệp không và file đính kèm có phải là hóa đơn cần gửi không.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Kiểm tra file đính kèm</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Mở thử file PDF trước nếu cần. File nên đọc được rõ ràng và đầy đủ ngày, số tiền, VAT/USt, tên nhà cung cấp, số hóa đơn và các trang liên quan. Nếu email có nhiều file, hãy kiểm tra file nào là hóa đơn thật sự.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Chuyển tiếp email đến địa chỉ Upload Mail</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Bấm <strong>Weiterleiten</strong> hoặc <strong>Forward</strong>, sau đó nhập địa chỉ Upload Mail đã được cấp cho doanh nghiệp. Không tự gõ lại địa chỉ nếu không chắc; tốt nhất nên copy địa chỉ từ thông tin văn phòng đã gửi.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">5</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Giữ nguyên file PDF đính kèm</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Khi forward email, không xóa file đính kèm. Nếu email có hóa đơn PDF gốc, hãy giữ nguyên file đó. Không nên chụp ảnh màn hình hóa đơn rồi gửi thay cho file PDF nếu đã có PDF gốc.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">6</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Không gửi kèm nội dung không cần thiết</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Nếu email có nhiều file không liên quan, quảng cáo, điều khoản chung hoặc hình ảnh không phải hóa đơn, hãy cẩn thận trước khi gửi. Nếu không chắc file nào cần gửi, có thể hỏi văn phòng trước.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">7</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Ghi chú ngắn nếu cần</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Nếu chứng từ cần giải thích thêm, có thể ghi ngắn trong email trước khi gửi, ví dụ: <strong>bezahlt privat</strong>, <strong>Bar bezahlt</strong>, <strong>für Januar 2026</strong> hoặc <strong>gehört zu Kasse</strong>. Không cần viết dài nếu hóa đơn đã rõ ràng.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">8</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Gửi email và chờ hệ thống xử lý</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Sau khi kiểm tra địa chỉ Upload Mail và file đính kèm, bấm gửi. Việc chuyển vào DATEV có thể cần một chút thời gian. Không cần gửi lại ngay nếu chưa thấy xuất hiện lập tức.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">9</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Không gửi trùng qua nhiều cách</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Nếu đã gửi hóa đơn bằng Upload Mail, thông thường không cần upload lại cùng hóa đơn bằng điện thoại hoặc máy tính. Gửi trùng có thể làm chứng từ bị kiểm tra hai lần và làm chậm quá trình xử lý.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">10</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Khi không chắc, gửi ảnh màn hình cho văn phòng</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Nếu bạn không chắc email đã gửi đúng chưa, địa chỉ Upload Mail có đúng không, hoặc file có được chuyển vào DATEV không, hãy chụp màn hình email đã gửi hoặc thông báo lỗi và gửi cho văn phòng để được hỗ trợ.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8 p-5 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-yellow-900">
+                  <strong>Lưu ý:</strong> Upload Mail chỉ nên dùng cho chứng từ nhận qua email có file đính kèm rõ ràng, đặc biệt là PDF. Nếu là hóa đơn giấy hoặc Kassenbon, nên dùng DATEV Upload mobil để chụp trực tiếp.
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-gray-100">
+              <h4 class="text-xl font-bold text-blue-900 mb-5">Lưu ý chung</h4>
+              <ul class="space-y-4 text-sm text-gray-600">
+                <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>Mỗi hóa đơn nên là một file riêng.</span></li>
+                <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>Hóa đơn nhiều trang phải tải đủ tất cả các trang.</span></li>
+                <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>File PDF nên đặt tên dễ hiểu, ví dụ: 2026-01-15_Telekom.</span></li>
+                <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>Chứng từ gốc vẫn cần được lưu giữ theo quy định.</span></li>
+              </ul>
+
+              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Không nên upload</h5>
+                <p class="text-sm text-gray-600">Ảnh quá mờ, file thiếu trang, hóa đơn cá nhân không liên quan đến công ty hoặc cùng một chứng từ được gửi lặp lại nhiều lần qua nhiều kênh.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bank Guide -->
+        <div class="guide-detail hidden" data-content="bank">
+          <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-0">
+
+            <div class="p-8 md:p-10">
+              <div class="flex items-center mb-6">
+                <div class="w-14 h-14 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-4">
+                  <i class="fas fa-university text-2xl"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-datev uppercase tracking-wide">Tài liệu 03</p>
+                  <h3 class="text-2xl md:text-3xl font-bold text-blue-900">
+                    Kết nối ngân hàng trong DATEV
+                  </h3>
+                </div>
+              </div>
+
+              <p class="text-gray-600 mb-8 leading-relaxed">
+                Kết nối ngân hàng giúp văn phòng nhận giao dịch ngân hàng trong DATEV để đối chiếu với hóa đơn và chứng từ. Khách hàng không cần tự hạch toán. Khách hàng chỉ cần chuẩn bị thông tin tài khoản, xác nhận kết nối nếu được yêu cầu và tiếp tục gửi chứng từ đầy đủ.
+              </p>
+
+              <div class="space-y-5">
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Cho văn phòng biết tài khoản cần xử lý</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Vui lòng cho văn phòng biết tài khoản ngân hàng nào dùng cho doanh nghiệp. Nếu có nhiều tài khoản, hãy nói rõ tài khoản nào cần kết nối hoặc xử lý trong kế toán.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Văn phòng kiểm tra hình thức phù hợp</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Văn phòng sẽ kiểm tra tài khoản ngân hàng có thể lấy giao dịch vào DATEV theo cách nào, ví dụ RZ-Bankinfo, PIN/TAN, EBICS hoặc import file thủ công. Không phải ngân hàng nào cũng hỗ trợ giống nhau.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Khách hàng xác nhận nếu cần</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Tùy ngân hàng và hình thức kết nối, khách hàng có thể cần ký Teilnahmeerklärung hoặc tự xác nhận bằng online banking, TAN-App, photoTAN, chipTAN hoặc phương thức bảo mật của ngân hàng.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Không gửi mật khẩu, PIN hoặc TAN</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Văn phòng chỉ hướng dẫn quy trình và kiểm tra trong DATEV. Khách hàng tự xác nhận với ngân hàng của mình. Không gửi mật khẩu online banking, PIN, TAN hoặc mã xác nhận cho văn phòng hoặc người khác.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">5</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Văn phòng kiểm tra giao dịch trong DATEV</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Sau khi kết nối hoặc import thành công, văn phòng kiểm tra xem giao dịch ngân hàng đã có trong DATEV chưa. Dữ liệu có thể không xuất hiện ngay lập tức và có thể chỉ bắt đầu từ một thời điểm nhất định.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">6</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Vẫn cần gửi hóa đơn và chứng từ</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Giao dịch ngân hàng chỉ cho biết tiền đã vào hoặc ra. Hóa đơn, Kassenbon, hợp đồng và chứng từ liên quan vẫn cần được upload để văn phòng biết giao dịch đó thuộc nội dung gì.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">7</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Nếu không kết nối tự động được</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Nếu không dùng được kết nối ngân hàng tự động, khách hàng có thể cần tải file giao dịch từ online banking và gửi cho văn phòng. Nên ưu tiên file CAMT.053, MT940 hoặc CSV nếu ngân hàng hỗ trợ.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">8</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">PDF Bankauszug chỉ dùng để kiểm tra</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      PDF Bankauszug có thể tải lên DUO để văn phòng kiểm tra hoặc lưu tham khảo. Tuy nhiên, PDF không phải cách tốt nhất để buchen giao dịch ngân hàng. Nếu có thể, nên dùng kết nối ngân hàng hoặc file giao dịch dạng CAMT.053, MT940 hoặc CSV.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">9</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Ghi chú khoản chưa rõ</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Nếu có khoản thanh toán khó hiểu, chuyển tiền nội bộ, hoàn tiền, thanh toán bằng tài khoản riêng hoặc khoản không có hóa đơn, hãy ghi chú ngắn để văn phòng xử lý đúng.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="mt-8 p-5 bg-blue-50 border border-blue-100 rounded-xl text-sm text-blue-900">
+                <strong>Quan trọng:</strong> Kết nối ngân hàng không thay thế việc gửi chứng từ. Giao dịch ngân hàng cho biết tiền đã vào/ra, còn hóa đơn và chứng từ giải thích giao dịch đó là gì.
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-gray-100">
+              <h4 class="text-xl font-bold text-blue-900 mb-5">
+                Khách hàng cần chuẩn bị
+              </h4>
+
+              <ul class="space-y-4 text-sm text-gray-600">
+                <li class="flex gap-3">
+                  <i class="fas fa-check-circle text-datev mt-1"></i>
+                  <span>Tên ngân hàng và IBAN của tài khoản doanh nghiệp.</span>
+                </li>
+                <li class="flex gap-3">
+                  <i class="fas fa-check-circle text-datev mt-1"></i>
+                  <span>Thông tin tài khoản nào cần xử lý trong kế toán.</span>
+                </li>
+                <li class="flex gap-3">
+                  <i class="fas fa-check-circle text-datev mt-1"></i>
+                  <span>Quyền online banking nếu cần xác nhận kết nối.</span>
+                </li>
+                <li class="flex gap-3">
+                  <i class="fas fa-check-circle text-datev mt-1"></i>
+                  <span>TAN-App, photoTAN, chipTAN hoặc app ngân hàng nếu cần.</span>
+                </li>
+              </ul>
+
+              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Các cách có thể sử dụng</h5>
+                <ul class="space-y-3 text-sm text-gray-600">
+                  <li>
+                    <strong>RZ-Bankinfo:</strong> giao dịch được chuyển tự động qua DATEV nếu ngân hàng hỗ trợ và đã được kích hoạt.
+                  </li>
+                  <li>
+                    <strong>PIN/TAN:</strong> khách hàng tự xác nhận qua online banking và app ngân hàng.
+                  </li>
+                  <li>
+                    <strong>EBICS:</strong> thường dùng cho doanh nghiệp có kết nối ngân hàng chuyên nghiệp hơn.
+                  </li>
+                  <li>
+                    <strong>Import thủ công:</strong> khách hàng gửi file giao dịch như CAMT.053, MT940 hoặc CSV.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Không được gửi cho văn phòng</h5>
+                <ul class="space-y-2 text-sm text-gray-600">
+                  <li class="flex gap-2">
+                    <i class="fas fa-times-circle text-red-400 mt-1"></i>
+                    <span>Mật khẩu online banking.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-times-circle text-red-400 mt-1"></i>
+                    <span>PIN ngân hàng.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-times-circle text-red-400 mt-1"></i>
+                    <span>TAN hoặc mã xác nhận.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-times-circle text-red-400 mt-1"></i>
+                    <span>Ảnh màn hình có dữ liệu bảo mật.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Lợi ích</h5>
+                <ul class="space-y-2 text-sm text-gray-600">
+                  <li class="flex gap-2">
+                    <i class="fas fa-check text-datev mt-1"></i>
+                    <span>Ít phải gửi sao kê thủ công.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-check text-datev mt-1"></i>
+                    <span>Dễ đối chiếu hóa đơn với thanh toán.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-check text-datev mt-1"></i>
+                    <span>Dễ nhận ra chứng từ còn thiếu.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-check text-datev mt-1"></i>
+                    <span>Giúp xử lý kế toán rõ ràng hơn.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Lỗi thường gặp</h5>
+                <ul class="space-y-2 text-sm text-gray-600">
+                  <li class="flex gap-2">
+                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
+                    <span>Không đăng nhập được online banking.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
+                    <span>TAN-App hoặc photoTAN không hoạt động.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
+                    <span>Giao dịch chưa xuất hiện ngay trong DATEV.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
+                    <span>Khách gửi PDF Bankauszug nhưng không có file giao dịch để import.</span>
+                  </li>
+                </ul>
+
+                <p class="mt-4 pt-4 border-t border-gray-200 text-sm text-gray-600">
+                  Nếu gặp lỗi, vui lòng chụp màn hình thông báo lỗi và gửi cho văn phòng, nhưng không gửi mật khẩu, PIN hoặc TAN.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Belege & Auswertungen Guide -->
+        <div class="guide-detail hidden" data-content="auswertung">
+          <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-0">
+
+            <div class="p-8 md:p-10">
+              <div class="flex items-center mb-6">
+                <div class="w-14 h-14 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center mr-4">
+                  <i class="fas fa-chart-line text-2xl"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-datev uppercase tracking-wide">Tài liệu 04</p>
+                  <h3 class="text-2xl md:text-3xl font-bold text-blue-900">
+                    Kiểm tra Belege & xem Auswertungen
+                  </h3>
+                </div>
+              </div>
+
+              <p class="text-gray-600 mb-8 leading-relaxed">
+                Trong DATEV Unternehmen online, khách hàng có thể kiểm tra lại chứng từ đã gửi và xem các tài liệu do văn phòng cung cấp, ví dụ BWA, SuSa, OPOS hoặc tài liệu lương. Phần này giúp khách hàng biết nơi cần xem, cần tải xuống và khi nào nên hỏi lại văn phòng.
+              </p>
+
+              <div class="space-y-5">
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Phân biệt Belege và Auswertungen</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      <strong>Belege</strong> là hóa đơn, Kassenbon, hợp đồng hoặc chứng từ khách hàng upload lên DATEV. <strong>Auswertungen</strong> là tài liệu hoặc báo cáo do văn phòng cung cấp cho khách hàng xem, ví dụ BWA, SuSa, OPOS hoặc tài liệu lương.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Kiểm tra chứng từ đã upload</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Vào khu vực Belege trong DATEV Unternehmen online để xem lại chứng từ đã tải lên. Kiểm tra xem file có đúng công ty, đúng tháng, đúng loại chứng từ và có đọc được rõ không.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Kiểm tra có bị thiếu hoặc gửi trùng không</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Nếu văn phòng hỏi chứng từ còn thiếu, hãy kiểm tra lại các hóa đơn giấy, Kassenbon, hóa đơn nhận qua email, hợp đồng hoặc chứng từ thanh toán chưa upload. Nếu thấy một chứng từ xuất hiện nhiều lần, vui lòng báo cho văn phòng để tránh xử lý trùng.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Không tự xóa hoặc sửa nếu không chắc</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Nếu không chắc chứng từ đã được xử lý hay chưa, không nên tự xóa hoặc upload lại nhiều lần. Hãy chụp màn hình và gửi cho văn phòng để được kiểm tra trước.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">5</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Mở khu vực Auswertungen</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Khi văn phòng bereitstellen tài liệu, khách hàng có thể mở khu vực Auswertungen hoặc khu vực tài liệu được cấp quyền trong DATEV Unternehmen online để xem và tải xuống. Nếu không thấy mục này, có thể tài khoản chưa có quyền hoặc tài liệu chưa được văn phòng cung cấp.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">6</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Chọn đúng tháng hoặc đúng kỳ báo cáo</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Khi xem Auswertungen, hãy kiểm tra đúng tháng, quý hoặc năm cần xem. Ví dụ BWA tháng 01/2026 khác với BWA tháng 02/2026. Nếu cần tài liệu của một kỳ cụ thể, hãy nói rõ tháng hoặc năm khi hỏi văn phòng.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">7</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Tải tài liệu xuống nếu cần lưu nội bộ</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Các báo cáo như BWA, SuSa, OPOS hoặc tài liệu lương có thể được mở hoặc tải xuống tùy quyền truy cập. Nếu doanh nghiệp cần lưu nội bộ, gửi cho người phụ trách hoặc in ra, hãy tải đúng file và đúng kỳ báo cáo.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">8</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Hỏi văn phòng khi không tìm thấy tài liệu</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Khi cần hỏi, vui lòng gửi tên doanh nghiệp, tháng hoặc kỳ cần kiểm tra và nói rõ bạn đang tìm Beleg, BWA, SuSa, OPOS hay tài liệu lương. Nếu có ảnh chụp màn hình, việc hỗ trợ sẽ nhanh hơn.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="mt-8 p-5 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-yellow-900">
+                <strong>Lưu ý:</strong> Nếu bạn không thấy Auswertungen, có thể tài liệu chưa được văn phòng bereitstellen hoặc tài khoản chưa có quyền xem mục đó. Vui lòng gửi ảnh màn hình cho văn phòng để kiểm tra.
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-gray-100">
+              <h4 class="text-xl font-bold text-blue-900 mb-5">
+                Các tài liệu thường gặp
+              </h4>
+
+              <ul class="space-y-4 text-sm text-gray-600">
+                <li class="flex gap-3">
+                  <i class="fas fa-check-circle text-datev mt-1"></i>
+                  <span><strong>BWA:</strong> báo cáo tình hình kinh doanh trong kỳ.</span>
+                </li>
+                <li class="flex gap-3">
+                  <i class="fas fa-check-circle text-datev mt-1"></i>
+                  <span><strong>SuSa:</strong> Summen- und Saldenliste, danh sách tổng phát sinh và số dư tài khoản.</span>
+                </li>
+                <li class="flex gap-3">
+                  <i class="fas fa-check-circle text-datev mt-1"></i>
+                  <span><strong>OPOS:</strong> danh sách công nợ khách hàng hoặc nhà cung cấp còn mở.</span>
+                </li>
+                <li class="flex gap-3">
+                  <i class="fas fa-check-circle text-datev mt-1"></i>
+                  <span><strong>Lohn:</strong> Lohnabrechnungen, Beitragsnachweise, Lohnjournal hoặc tài liệu lương nếu được cung cấp.</span>
+                </li>
+              </ul>
+
+              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Khách hàng nên kiểm tra</h5>
+                <ul class="space-y-2 text-sm text-gray-600">
+                  <li class="flex gap-2">
+                    <i class="fas fa-check text-datev mt-1"></i>
+                    <span>Tài liệu có đúng công ty không.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-check text-datev mt-1"></i>
+                    <span>Tài liệu có đúng tháng, quý hoặc năm không.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-check text-datev mt-1"></i>
+                    <span>File có mở được và đọc được rõ không.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-check text-datev mt-1"></i>
+                    <span>Có thiếu tài liệu mà văn phòng đã thông báo không.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Lỗi thường gặp</h5>
+                <ul class="space-y-2 text-sm text-gray-600">
+                  <li class="flex gap-2">
+                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
+                    <span>Không thấy mục Auswertungen.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
+                    <span>Không thấy tài liệu của tháng cần tìm.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
+                    <span>File không mở được hoặc không tải xuống được.</span>
+                  </li>
+                  <li class="flex gap-2">
+                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
+                    <span>Tài khoản chưa có quyền xem tài liệu.</span>
+                  </li>
+                </ul>
+
+                <p class="mt-4 pt-4 border-t border-gray-200 text-sm text-gray-600">
+                  Trong các trường hợp này, vui lòng gửi ảnh chụp màn hình và nói rõ bạn cần tài liệu nào, tháng nào để văn phòng kiểm tra nhanh hơn.
+                </p>
+              </div>
+
+              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Khi cần hỏi văn phòng</h5>
+                <p class="text-sm text-gray-600">
+                  Hãy gửi tên doanh nghiệp, tháng cần kiểm tra và nói rõ bạn đang tìm Beleg, BWA, SuSa, OPOS hay tài liệu lương. Nếu có ảnh màn hình, việc hỗ trợ sẽ nhanh hơn.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">
+        Giải đáp thắc mắc
+      </h2>
+
+      <div class="space-y-4">
+        <div class="faq-item border rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition">
+          <div class="flex justify-between items-center gap-4 font-bold text-blue-900">
+            <span>DATEV Unternehmen online có bảo mật không?</span>
+            <i class="fas fa-plus text-gray-400 text-sm"></i>
+          </div>
+          <p class="mt-3 text-gray-600 hidden">
+            DATEV sử dụng các phương thức đăng nhập bảo mật như SmartLogin hoặc SmartCard. Bạn không nên chia sẻ mã PIN, thiết bị đăng nhập hoặc quyền truy cập cho người không có thẩm quyền.
+          </p>
+        </div>
+
+        <div class="faq-item border rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition">
+          <div class="flex justify-between items-center gap-4 font-bold text-blue-900">
+            <span>Tôi có thể xem lại chứng từ từ các năm trước không?</span>
+            <i class="fas fa-plus text-gray-400 text-sm"></i>
+          </div>
+          <p class="mt-3 text-gray-600 hidden">
+            Có thể tra cứu lại các chứng từ đã tải lên trong phạm vi quyền truy cập và thời gian lưu trữ được thiết lập. Tuy nhiên, chứng từ gốc vẫn nên được lưu giữ theo quy định thuế và kế toán.
+          </p>
+        </div>
+
+        <div class="faq-item border rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition">
+          <div class="flex justify-between items-center gap-4 font-bold text-blue-900">
+            <span>Tôi phải làm gì nếu làm mất điện thoại có SmartLogin?</span>
+            <i class="fas fa-plus text-gray-400 text-sm"></i>
+          </div>
+          <p class="mt-3 text-gray-600 hidden">
+            Hãy liên hệ ngay với Buchhaltungsservice Vu Ngoc Chan. Chúng tôi sẽ kiểm tra quyền truy cập và hướng dẫn bạn các bước cần thiết để khóa hoặc kích hoạt lại quyền đăng nhập.
+          </p>
+        </div>
+
+        <div class="faq-item border rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition">
+          <div class="flex justify-between items-center gap-4 font-bold text-blue-900">
+            <span>Tôi nên tải chứng từ lúc nào?</span>
+            <i class="fas fa-plus text-gray-400 text-sm"></i>
+          </div>
+          <p class="mt-3 text-gray-600 hidden">
+            Tốt nhất là tải chứng từ ngay sau khi nhận được. Nếu để dồn cuối tháng, việc kiểm tra và xử lý kế toán có thể bị chậm, đặc biệt khi còn thiếu hóa đơn hoặc cần hỏi lại thông tin.
+          </p>
+        </div>
+
+        <div class="faq-item border rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition">
+          <div class="flex justify-between items-center gap-4 font-bold text-blue-900">
+            <span>Tôi có cần gửi thêm chứng từ qua email không?</span>
+            <i class="fas fa-plus text-gray-400 text-sm"></i>
+          </div>
+          <p class="mt-3 text-gray-600 hidden">
+            Nếu chứng từ đã được tải lên DATEV Unternehmen online thì thông thường không cần gửi lại qua email. Việc gửi trùng có thể làm tăng nguy cơ bị xử lý hai lần. Nếu có trường hợp đặc biệt, vui lòng ghi chú rõ.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notice Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm text-sm text-gray-600 leading-relaxed">
+        <p>
+          <strong class="text-blue-900">Lưu ý:</strong> Các thông tin trên trang này được biên soạn nhằm hỗ trợ khách hàng trong quá trình chuẩn bị chứng từ và sử dụng DATEV Unternehmen online. Nội dung không thay thế tư vấn thuế hoặc tư vấn pháp lý chuyên môn.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 hero-gradient text-white">
+    <div class="max-w-7xl mx-auto px-4">
+
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+          Buchhaltungsservice Vu Ngoc Chan
+        </h2>
+
+        <p class="text-xl opacity-90">
+          Chúng tôi luôn sẵn sàng hỗ trợ bạn tại Đức
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+        <a href="tel:+493054801088" class="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:bg-white/15 transition">
+          <i class="fas fa-phone-alt text-2xl mb-4 text-datev"></i>
+          <h4 class="text-lg font-bold mb-2">Điện thoại</h4>
+          <p class="text-xl font-bold">+49 30 548 010 88</p>
+        </a>
+
+        <a href="mailto:info@vu-consult.de" class="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:bg-white/15 transition">
+          <i class="fas fa-envelope text-2xl mb-4 text-datev"></i>
+          <h4 class="text-lg font-bold mb-2">Email</h4>
+          <p class="text-lg font-bold break-all">info@vu-consult.de</p>
+        </a>
+
+        <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/20">
+          <i class="fas fa-map-marked-alt text-2xl mb-4 text-datev"></i>
+          <h4 class="text-lg font-bold mb-2">Địa chỉ</h4>
+          <p class="text-base">Herzbergstr. 33/34</p>
+          <p class="text-base">10365 Berlin</p>
+        </div>
+
+        <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/20">
+          <i class="fas fa-clock text-2xl mb-4 text-datev"></i>
+          <h4 class="text-lg font-bold mb-2">Làm việc</h4>
+          <p class="text-base">Thứ 2 - Thứ 6</p>
+          <p class="text-lg font-bold text-white">09:00 - 17:00</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+
+      <div>
+        <div class="text-2xl font-bold text-white mb-2">
+          Buchhaltungsservice <span class="text-datev">Vu Ngoc Chan</span>
+        </div>
+
+        <p class="text-sm">
+          Dịch vụ kế toán hiện đại, chuyên nghiệp cho doanh nghiệp tại Đức.
+        </p>
+
+        <div class="mt-4 flex items-center space-x-2 text-sm text-white">
+          <i class="fas fa-envelope text-datev"></i>
+          <span>info@vu-consult.de</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-8 md:gap-16">
+
+        <div>
+          <h5 class="text-white font-bold mb-4">Menu</h5>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="index.html#home" class="hover:text-datev transition">Trang chủ</a>
+            </li>
+            <li>
+              <a href="index.html#services" class="hover:text-datev transition">Dịch vụ</a>
+            </li>
+            <li>
+              <a href="#intro" class="hover:text-datev transition">Datev UO</a>
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-datev transition">Liên hệ</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-white font-bold mb-4">Liên kết</h5>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="https://www.datev.de" target="_blank" rel="noopener noreferrer" class="hover:text-datev transition">
+                DATEV Germany
+              </a>
+            </li>
+            <li>
+              <a href="impressum.html" class="hover:text-datev transition">Impressum</a>
+            </li>
+            <li>
+              <a href="datenschutz.html" class="hover:text-datev transition">Datenschutz</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-gray-800 text-center text-xs">
+      <p>
+        &copy; 2026 Buchhaltungsservice Vu Ngoc Chan. Trang thông tin dành cho khách hàng của văn phòng.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    document.querySelectorAll('.guide-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const selectedGuide = card.getAttribute('data-guide');
+
+        document.querySelectorAll('.guide-card').forEach(el => {
+          el.classList.remove('active', 'border-datev');
+          el.classList.add('border-gray-200');
+        });
+
+        card.classList.add('active', 'border-datev');
+        card.classList.remove('border-gray-200');
+
+        document.querySelectorAll('.guide-detail').forEach(detail => {
+          detail.classList.add('hidden');
+        });
+
+        const selectedContent = document.querySelector(`.guide-detail[data-content="${selectedGuide}"]`);
+        if (selectedContent) {
+          selectedContent.classList.remove('hidden');
+        }
+      });
+    });
+
+    document.querySelectorAll('.upload-mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.getAttribute('data-upload-mode');
+
+        document.querySelectorAll('.upload-mode-btn').forEach(el => {
+          el.classList.remove('active');
+        });
+        btn.classList.add('active');
+
+        document.querySelectorAll('.upload-mode-content').forEach(el => {
+          el.classList.add('hidden');
+        });
+
+        const target = document.querySelector(`.upload-mode-content[data-upload-content="${mode}"]`);
+        if (target) {
+          target.classList.remove('hidden');
+        }
+      });
+    });
+
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const answer = item.querySelector('p');
+        const icon = item.querySelector('i');
+        const isOpen = !answer.classList.contains('hidden');
+
+        document.querySelectorAll('.faq-item p').forEach(el => el.classList.add('hidden'));
+        document.querySelectorAll('.faq-item i').forEach(el => {
+          el.classList.remove('fa-minus');
+          el.classList.add('fa-plus');
+        });
+
+        if (!isOpen) {
+          answer.classList.remove('hidden');
+          icon.classList.remove('fa-plus');
+          icon.classList.add('fa-minus');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
