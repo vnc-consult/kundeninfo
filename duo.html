@@ -17,8 +17,39 @@
       scroll-behavior: smooth;
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
+    }
+
+    img,
+    svg,
+    video,
+    canvas {
+      max-width: 100%;
+      height: auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    a,
+    span,
+    li,
+    strong {
+      overflow-wrap: break-word;
     }
 
     .hero-gradient {
@@ -106,26 +137,26 @@
   </nav>
 
   <!-- Hero Section -->
-  <header id="intro" class="hero-gradient text-white py-20 px-4">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+  <header id="intro" class="hero-gradient text-white py-16 md:py-20 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col xl:flex-row items-center justify-between gap-8 xl:gap-10">
 
-      <div class="md:w-1/2">
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-white">
-          Số hóa kế toán cùng
-          <span class="text-datev whitespace-nowrap">DATEV Unternehmen online</span>
+      <div class="w-full xl:w-7/12 min-w-0">
+        <h1 class="text-[clamp(1.65rem,5.7vw,3rem)] font-extrabold mb-6 leading-tight text-white">
+          <span class="block">Số hóa kế toán cùng</span>
+          <span class="block whitespace-nowrap text-datev">DATEV Unternehmen online</span>
         </h1>
 
         <div class="flex flex-wrap gap-4">
-          <a href="#setup" class="bg-white text-blue-900 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-xl">
+          <a href="#setup" class="w-full sm:w-auto text-center bg-white text-blue-900 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-xl">
             Bắt đầu sử dụng
           </a>
-          <a href="#guides" class="border border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-blue-900 transition">
+          <a href="#guides" class="w-full sm:w-auto text-center border border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-blue-900 transition">
             Xem hướng dẫn
           </a>
         </div>
       </div>
 
-      <div class="md:w-5/12 bg-white/10 p-4 rounded-2xl backdrop-blur-sm">
+      <div class="w-full xl:w-5/12 bg-white/10 p-4 rounded-2xl backdrop-blur-sm">
         <div class="bg-white rounded-xl shadow-2xl p-6 text-gray-800">
           <div class="flex items-center mb-4">
             <div class="w-12 h-12 bg-green-100 text-datev rounded-full flex items-center justify-center mr-4">
@@ -151,7 +182,7 @@
   </header>
 
   <!-- Key Steps Section -->
-  <section id="setup" class="py-20 bg-white">
+  <section id="setup" class="py-14 md:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4">
 
       <div class="text-center mb-16">
@@ -198,7 +229,7 @@
   </section>
 
   <!-- Guides Section -->
-  <section id="guides" class="py-20 bg-blue-50">
+  <section id="guides" class="py-14 md:py-20 bg-blue-50">
     <div class="max-w-7xl mx-auto px-4">
 
       <div class="text-center mb-12">
@@ -1339,7 +1370,7 @@
   </section>
 
   <!-- FAQ Section -->
-  <section id="faq" class="py-20 bg-white">
+  <section id="faq" class="py-14 md:py-20 bg-white">
     <div class="max-w-3xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12">
         Giải đáp thắc mắc
@@ -1411,12 +1442,13 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-20 hero-gradient text-white">
+  <section id="contact" class="py-14 md:py-20 hero-gradient text-white">
     <div class="max-w-7xl mx-auto px-4">
 
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
-          Buchhaltungsservice Vu Ngoc Chan
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white leading-tight">
+          <span class="inline-block">Buchhaltungsservice</span>
+          <span class="inline-block whitespace-nowrap text-datev">Vu Ngoc Chan</span>
         </h2>
 
         <p class="text-xl opacity-90">
@@ -1461,8 +1493,9 @@
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
 
       <div>
-        <div class="text-2xl font-bold text-white mb-2">
-          Buchhaltungsservice <span class="text-datev">Vu Ngoc Chan</span>
+        <div class="text-2xl font-bold text-white mb-2 leading-tight">
+          <span class="inline-block">Buchhaltungsservice</span>
+          <span class="inline-block whitespace-nowrap text-datev">Vu Ngoc Chan</span>
         </div>
 
         <p class="text-sm">
@@ -1475,7 +1508,7 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-8 md:gap-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16">
 
         <div>
           <h5 class="text-white font-bold mb-4">Menu</h5>
