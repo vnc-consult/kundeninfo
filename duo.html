@@ -87,6 +87,12 @@
       color: white;
       border-color: #64b42d;
     }
+
+    .auswertung-mode-btn.active {
+      background-color: #64b42d;
+      color: white;
+      border-color: #64b42d;
+    }
   </style>
 </head>
 
@@ -1353,176 +1359,178 @@
                 </div>
               </div>
 
-              <p class="text-gray-600 mb-8 leading-relaxed">
-                Trong DATEV Unternehmen online, khách hàng có thể kiểm tra lại chứng từ đã gửi và xem các tài liệu do văn phòng cung cấp, ví dụ BWA, SuSa, OPOS hoặc tài liệu lương. Phần này giúp khách hàng biết nơi cần xem, cần tải xuống và khi nào nên hỏi lại văn phòng.
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Trong DATEV Unternehmen online, khách hàng có thể kiểm tra lại chứng từ đã gửi và xem các tài liệu do văn phòng cung cấp. Phần này được chia thành 2 mục để khách hàng dễ thao tác hơn.
               </p>
 
-              <div class="space-y-5">
-
-                <div class="flex gap-4">
-                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
-                  <div>
-                    <h4 class="font-bold text-gray-900">Phân biệt Belege và Auswertungen</h4>
-                    <p class="text-gray-600 text-sm mt-1">
-                      <strong>Belege</strong> là hóa đơn, Kassenbon, hợp đồng hoặc chứng từ khách hàng upload lên DATEV. <strong>Auswertungen</strong> là tài liệu hoặc báo cáo do văn phòng cung cấp cho khách hàng xem, ví dụ BWA, SuSa, OPOS hoặc tài liệu lương.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex gap-4">
-                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
-                  <div>
-                    <h4 class="font-bold text-gray-900">Kiểm tra chứng từ đã upload</h4>
-                    <p class="text-gray-600 text-sm mt-1">
-                      Vào khu vực Belege trong DATEV Unternehmen online để xem lại chứng từ đã tải lên. Kiểm tra xem file có đúng công ty, đúng tháng, đúng loại chứng từ và có đọc được rõ không.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex gap-4">
-                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
-                  <div>
-                    <h4 class="font-bold text-gray-900">Kiểm tra có bị thiếu hoặc gửi trùng không</h4>
-                    <p class="text-gray-600 text-sm mt-1">
-                      Nếu văn phòng hỏi chứng từ còn thiếu, hãy kiểm tra lại các hóa đơn giấy, Kassenbon, hóa đơn nhận qua email, hợp đồng hoặc chứng từ thanh toán chưa upload. Nếu thấy một chứng từ xuất hiện nhiều lần, vui lòng báo cho văn phòng để tránh xử lý trùng.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex gap-4">
-                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
-                  <div>
-                    <h4 class="font-bold text-gray-900">Không tự xóa hoặc sửa nếu không chắc</h4>
-                    <p class="text-gray-600 text-sm mt-1">
-                      Nếu không chắc chứng từ đã được xử lý hay chưa, không nên tự xóa hoặc upload lại nhiều lần. Hãy chụp màn hình và gửi cho văn phòng để được kiểm tra trước.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex gap-4">
-                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">5</div>
-                  <div>
-                    <h4 class="font-bold text-gray-900">Mở khu vực Auswertungen</h4>
-                    <p class="text-gray-600 text-sm mt-1">
-                      Khi văn phòng bereitstellen tài liệu, khách hàng có thể mở khu vực Auswertungen hoặc khu vực tài liệu được cấp quyền trong DATEV Unternehmen online để xem và tải xuống. Nếu không thấy mục này, có thể tài khoản chưa có quyền hoặc tài liệu chưa được văn phòng cung cấp.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex gap-4">
-                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">6</div>
-                  <div>
-                    <h4 class="font-bold text-gray-900">Chọn đúng tháng hoặc đúng kỳ báo cáo</h4>
-                    <p class="text-gray-600 text-sm mt-1">
-                      Khi xem Auswertungen, hãy kiểm tra đúng tháng, quý hoặc năm cần xem. Ví dụ BWA tháng 01/2026 khác với BWA tháng 02/2026. Nếu cần tài liệu của một kỳ cụ thể, hãy nói rõ tháng hoặc năm khi hỏi văn phòng.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex gap-4">
-                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">7</div>
-                  <div>
-                    <h4 class="font-bold text-gray-900">Tải tài liệu xuống nếu cần lưu nội bộ</h4>
-                    <p class="text-gray-600 text-sm mt-1">
-                      Các báo cáo như BWA, SuSa, OPOS hoặc tài liệu lương có thể được mở hoặc tải xuống tùy quyền truy cập. Nếu doanh nghiệp cần lưu nội bộ, gửi cho người phụ trách hoặc in ra, hãy tải đúng file và đúng kỳ báo cáo.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex gap-4">
-                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">8</div>
-                  <div>
-                    <h4 class="font-bold text-gray-900">Hỏi văn phòng khi không tìm thấy tài liệu</h4>
-                    <p class="text-gray-600 text-sm mt-1">
-                      Khi cần hỏi, vui lòng gửi tên doanh nghiệp, tháng hoặc kỳ cần kiểm tra và nói rõ bạn đang tìm Beleg, BWA, SuSa, OPOS hay tài liệu lương. Nếu có ảnh chụp màn hình, việc hỗ trợ sẽ nhanh hơn.
-                    </p>
-                  </div>
-                </div>
-
+              <div class="flex flex-wrap gap-3 mb-8">
+                <button type="button" data-auswertung-mode="belege" class="auswertung-mode-btn active px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">
+                  Kiểm tra Belege
+                </button>
+                <button type="button" data-auswertung-mode="reports" class="auswertung-mode-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">
+                  Xem Auswertungen
+                </button>
               </div>
 
-              <div class="mt-8 p-5 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-yellow-900">
-                <strong>Lưu ý:</strong> Nếu bạn không thấy Auswertungen, có thể tài liệu chưa được văn phòng bereitstellen hoặc tài khoản chưa có quyền xem mục đó. Vui lòng gửi ảnh màn hình cho văn phòng để kiểm tra.
+              <!-- Belege content -->
+              <div class="auswertung-mode-content" data-auswertung-content="belege">
+                <div class="bg-purple-50 rounded-xl p-5 border border-purple-100 mb-6">
+                  <h4 class="font-bold text-blue-900 mb-2">
+                    <i class="fas fa-file-alt mr-2"></i>Kiểm tra Belege
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    Belege là hóa đơn, Kassenbon, hợp đồng hoặc chứng từ khách hàng đã upload lên DATEV. Khách hàng có thể xem lại chứng từ trong <strong>Belegübersicht anzeigen</strong> để kiểm tra chứng từ đã gửi đúng chưa.
+                  </p>
+                </div>
+
+                <div class="space-y-5">
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Vào Belegübersicht anzeigen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Trong DATEV Unternehmen online, mở mục <strong>Belegübersicht anzeigen</strong> để xem lại các chứng từ đã upload.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Kiểm tra chứng từ đã upload</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Kiểm tra chứng từ đã upload có đúng công ty, đúng tháng, đúng Belegtyp và có đọc rõ không.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Sửa hoặc xóa nếu chứng từ chưa được xử lý</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Nếu chứng từ vừa upload bị sai, bị mờ, thiếu trang hoặc gửi nhầm, khách hàng có thể sửa/xóa và upload lại nếu chứng từ chưa được văn phòng xử lý, tức là chưa được đánh dấu là <strong>gebucht</strong>.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Không tự thao tác nếu chứng từ đã được xử lý</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Nếu chứng từ đã được văn phòng xử lý, đã được đánh dấu là <strong>gebucht</strong>, hoặc không xóa/sửa được, vui lòng không tự thao tác tiếp. Hãy gửi ảnh màn hình cho văn phòng để kiểm tra.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8 p-5 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-yellow-900">
+                  <strong>Lưu ý:</strong> Nếu không chắc chứng từ đã được xử lý hay chưa, khách hàng không nên tự xóa hoặc upload lại nhiều lần. Hãy gửi ảnh màn hình cho văn phòng để được kiểm tra trước.
+                </div>
+              </div>
+
+              <!-- Auswertungen content -->
+              <div class="auswertung-mode-content hidden" data-auswertung-content="reports">
+                <div class="bg-indigo-50 rounded-xl p-5 border border-indigo-100 mb-6">
+                  <h4 class="font-bold text-blue-900 mb-2">
+                    <i class="fas fa-chart-line mr-2"></i>Xem Auswertungen
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    Auswertungen là các báo cáo hoặc tài liệu do văn phòng cung cấp cho khách hàng, ví dụ BWA, SuSa, OPOS hoặc tài liệu lương.
+                  </p>
+                </div>
+
+                <div class="space-y-5">
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Vào Auswertungen anzeigen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Trong DATEV Unternehmen online, bấm <strong>Auswertungen anzeigen</strong> để xem các tài liệu văn phòng đã cung cấp.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Mở hoặc tải tài liệu xuống</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Khi thấy tài liệu cần xem, khách hàng có thể mở trực tiếp hoặc tải xuống để lưu nội bộ, in ra hoặc gửi cho người phụ trách.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Nếu không thấy tài liệu</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Nếu không thấy Auswertungen hoặc không tìm thấy tài liệu cần xem, vui lòng gửi ảnh màn hình cho văn phòng để kiểm tra.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8 p-5 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-yellow-900">
+                  <strong>Lưu ý:</strong> Nếu chưa thấy tài liệu, có thể văn phòng chưa bereitstellen tài liệu hoặc tài khoản chưa có quyền xem mục đó.
+                </div>
               </div>
             </div>
 
             <div class="bg-gray-50 p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-gray-100">
               <h4 class="text-xl font-bold text-blue-900 mb-5">
-                Các tài liệu thường gặp
+                Lưu ý chung
               </h4>
 
-              <ul class="space-y-4 text-sm text-gray-600">
-                <li class="flex gap-3">
-                  <i class="fas fa-check-circle text-datev mt-1"></i>
-                  <span><strong>BWA:</strong> báo cáo tình hình kinh doanh trong kỳ.</span>
-                </li>
-                <li class="flex gap-3">
-                  <i class="fas fa-check-circle text-datev mt-1"></i>
-                  <span><strong>SuSa:</strong> Summen- und Saldenliste, danh sách tổng phát sinh và số dư tài khoản.</span>
-                </li>
-                <li class="flex gap-3">
-                  <i class="fas fa-check-circle text-datev mt-1"></i>
-                  <span><strong>OPOS:</strong> danh sách công nợ khách hàng hoặc nhà cung cấp còn mở.</span>
-                </li>
-                <li class="flex gap-3">
-                  <i class="fas fa-check-circle text-datev mt-1"></i>
-                  <span><strong>Lohn:</strong> Lohnabrechnungen, Beitragsnachweise, Lohnjournal hoặc tài liệu lương nếu được cung cấp.</span>
-                </li>
-              </ul>
-
-              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
-                <h5 class="font-bold text-gray-900 mb-3">Khách hàng nên kiểm tra</h5>
-                <ul class="space-y-2 text-sm text-gray-600">
-                  <li class="flex gap-2">
-                    <i class="fas fa-check text-datev mt-1"></i>
-                    <span>Tài liệu có đúng công ty không.</span>
+              <div class="bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Phân biệt nhanh</h5>
+                <ul class="space-y-3 text-sm text-gray-600">
+                  <li class="flex gap-3">
+                    <i class="fas fa-file-alt text-datev mt-1"></i>
+                    <span><strong>Belege:</strong> hóa đơn, Kassenbon, hợp đồng hoặc chứng từ khách hàng upload lên DATEV.</span>
                   </li>
-                  <li class="flex gap-2">
-                    <i class="fas fa-check text-datev mt-1"></i>
-                    <span>Tài liệu có đúng tháng, quý hoặc năm không.</span>
-                  </li>
-                  <li class="flex gap-2">
-                    <i class="fas fa-check text-datev mt-1"></i>
-                    <span>File có mở được và đọc được rõ không.</span>
-                  </li>
-                  <li class="flex gap-2">
-                    <i class="fas fa-check text-datev mt-1"></i>
-                    <span>Có thiếu tài liệu mà văn phòng đã thông báo không.</span>
+                  <li class="flex gap-3">
+                    <i class="fas fa-chart-line text-datev mt-1"></i>
+                    <span><strong>Auswertungen:</strong> tài liệu hoặc báo cáo do văn phòng cung cấp cho khách hàng xem.</span>
                   </li>
                 </ul>
               </div>
 
               <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
-                <h5 class="font-bold text-gray-900 mb-3">Lỗi thường gặp</h5>
-                <ul class="space-y-2 text-sm text-gray-600">
-                  <li class="flex gap-2">
-                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
-                    <span>Không thấy mục Auswertungen.</span>
-                  </li>
-                  <li class="flex gap-2">
-                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
-                    <span>Không thấy tài liệu của tháng cần tìm.</span>
-                  </li>
-                  <li class="flex gap-2">
-                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
-                    <span>File không mở được hoặc không tải xuống được.</span>
-                  </li>
-                  <li class="flex gap-2">
-                    <i class="fas fa-exclamation-circle text-red-400 mt-1"></i>
-                    <span>Tài khoản chưa có quyền xem tài liệu.</span>
-                  </li>
+                <h5 class="font-bold text-gray-900 mb-3">Các tài liệu thường gặp</h5>
+                <ul class="space-y-3 text-sm text-gray-600">
+                  <li><strong>BWA:</strong> báo cáo tình hình kinh doanh.</li>
+                  <li><strong>SuSa:</strong> danh sách tổng phát sinh và số dư tài khoản.</li>
+                  <li><strong>OPOS:</strong> danh sách công nợ còn mở.</li>
                 </ul>
-
-                <p class="mt-4 pt-4 border-t border-gray-200 text-sm text-gray-600">
-                  Trong các trường hợp này, vui lòng gửi ảnh chụp màn hình và nói rõ bạn cần tài liệu nào, tháng nào để văn phòng kiểm tra nhanh hơn.
-                </p>
               </div>
 
               <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
-                <h5 class="font-bold text-gray-900 mb-3">Khi cần hỏi văn phòng</h5>
+                <h5 class="font-bold text-gray-900 mb-3">Mục Anwendungen</h5>
+
                 <p class="text-sm text-gray-600">
-                  Hãy gửi tên doanh nghiệp, tháng cần kiểm tra và nói rõ bạn đang tìm Beleg, BWA, SuSa, OPOS hay tài liệu lương. Nếu có ảnh màn hình, việc hỗ trợ sẽ nhanh hơn.
+                  Nếu không thấy mục cần dùng trên trang chính, khách hàng có thể bấm
+                  <strong>Anwendungen</strong> ở góc trên bên phải để mở danh sách ứng dụng DATEV.
                 </p>
+
+                <ul class="mt-4 space-y-3 text-sm text-gray-600">
+                  <li>
+                    <strong>Belege:</strong> dùng để upload chứng từ và mở Belegübersicht.
+                  </li>
+                  <li>
+                    <strong>Auswertungen Rechnungswesen:</strong> dùng để xem báo cáo kế toán như BWA, SuSa hoặc OPOS nếu văn phòng đã cung cấp.
+                  </li>
+                </ul>
+
+                <div class="mt-5 p-4 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-yellow-900">
+                  <strong>Lưu ý:</strong>
+                  Các ứng dụng khác như <strong>Kassenbuch</strong>, <strong>Stammdaten</strong>,
+                  <strong>Auftragswesen</strong> hoặc các phần cài đặt trong DATEV chỉ nên sử dụng
+                  khi đã trao đổi trước với văn phòng. Vui lòng không tự ý thay đổi cài đặt,
+                  thông tin công ty, quyền truy cập hoặc dữ liệu trong các mục này.
+                </div>
               </div>
             </div>
           </div>
@@ -1532,7 +1540,8 @@
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  
+<!-- FAQ Section -->
   <section id="faq" class="py-14 md:py-20 bg-white">
     <div class="max-w-3xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12">
@@ -1769,6 +1778,26 @@
         });
 
         const target = document.querySelector(`.upload-mode-content[data-upload-content="${mode}"]`);
+        if (target) {
+          target.classList.remove('hidden');
+        }
+      });
+    });
+
+    document.querySelectorAll('.auswertung-mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.getAttribute('data-auswertung-mode');
+
+        document.querySelectorAll('.auswertung-mode-btn').forEach(el => {
+          el.classList.remove('active');
+        });
+        btn.classList.add('active');
+
+        document.querySelectorAll('.auswertung-mode-content').forEach(el => {
+          el.classList.add('hidden');
+        });
+
+        const target = document.querySelector(`.auswertung-mode-content[data-auswertung-content="${mode}"]`);
         if (target) {
           target.classList.remove('hidden');
         }
