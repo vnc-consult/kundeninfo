@@ -633,8 +633,9 @@
                         Ví dụ:<br>
                         <strong>2026-01-15_Telekom_59,99_Bank</strong><br>
                         <strong>2026-01-20_Rewe_48,35_Bar</strong><br>
-                        <strong>2026-01-01_Miete_1200_Bank</strong><br>
-                        <strong>2026-01-31_ZBon_850,70_Kasse</strong>.
+                        <span class="inline-block mt-2 text-gray-500">
+                          Vui lòng xem phần <strong>Lưu ý chung</strong> bên cạnh để biết cách chọn đúng phần loại chứng từ như Bank, Bar, Kasse, Umsatz, Vertrag hoặc Privat.
+                        </span>
                       </p>
                     </div>
                   </div>
@@ -736,8 +737,9 @@
                         Ví dụ:<br>
                         <strong>2026-01-15_Telekom_59,99_Bank.pdf</strong><br>
                         <strong>2026-01-20_Rewe_48,35_Bar.pdf</strong><br>
-                        <strong>2026-01-01_Miete_1200_Bank.pdf</strong><br>
-                        <strong>2026-01-31_ZBon_850,70_Kasse.pdf</strong>
+                        <span class="inline-block mt-2 text-gray-500">
+                          Vui lòng xem phần <strong>Lưu ý chung</strong> bên cạnh để biết cách chọn đúng phần loại chứng từ như Bank, Bar, Kasse, Umsatz, Vertrag hoặc Privat.
+                        </span>
                       </p>
                     </div>
                   </div>
@@ -948,16 +950,101 @@
 
             <div class="bg-gray-50 p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-gray-100">
               <h4 class="text-xl font-bold text-blue-900 mb-5">Lưu ý chung</h4>
-              <ul class="space-y-4 text-sm text-gray-600">
-                <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>Mỗi hóa đơn nên là một file riêng.</span></li>
-                <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>Hóa đơn nhiều trang phải tải đủ tất cả các trang.</span></li>
-                <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>File PDF nên đặt tên dễ hiểu, ví dụ: 2026-01-15_Telekom_59,99_Bank.</span></li>
-                <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>Chứng từ gốc vẫn cần được lưu giữ theo quy định.</span></li>
-              </ul>
 
-              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
-                <h5 class="font-bold text-gray-900 mb-3">Không nên upload</h5>
-                <p class="text-sm text-gray-600">Ảnh quá mờ, file thiếu trang, hóa đơn cá nhân không liên quan đến công ty hoặc cùng một chứng từ được gửi lặp lại nhiều lần qua nhiều kênh.</p>
+              <div class="space-y-5 text-sm text-gray-600">
+
+                <div class="bg-white rounded-xl p-5 shadow-sm">
+                  <h5 class="font-bold text-gray-900 mb-2">Nguyên tắc upload</h5>
+                  <ul class="space-y-3">
+                    <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>Mỗi hóa đơn nên là một file riêng.</span></li>
+                    <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>Hóa đơn nhiều trang phải tải đủ tất cả các trang trong cùng một file.</span></li>
+                    <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>Chứng từ gốc vẫn cần được lưu giữ theo quy định.</span></li>
+                  </ul>
+                </div>
+
+                <div>
+                  <p class="font-bold text-gray-900">Mẫu đặt tên chứng từ</p>
+                  <p class="mt-1">
+                    Để văn phòng dễ xử lý chứng từ, vui lòng đặt tên file theo mẫu:
+                  </p>
+                  <div class="mt-3 bg-white border border-gray-100 rounded-xl p-4 font-mono text-gray-800 overflow-x-auto">
+                    <p>YYYY-MM-DD_TenNganGon_Sotien_PhanLoai</p>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="font-bold text-gray-900">Bank = hóa đơn chi phí thanh toán qua ngân hàng</p>
+                  <p class="mt-1">
+                    Dùng cho hóa đơn sẽ được đối chiếu với giao dịch ngân hàng, ví dụ điện thoại, tiền thuê, bảo hiểm, phần mềm hoặc nhà cung cấp.
+                  </p>
+                  <div class="mt-3 bg-white border border-gray-100 rounded-xl p-4 font-mono text-gray-800 overflow-x-auto">
+                    <p>2026-01-15_Telekom_59,99_Bank</p>
+                    <p>2026-01-01_Miete_1200_Bank</p>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="font-bold text-gray-900">Bar = hóa đơn chi phí lẻ trả tiền mặt</p>
+                  <p class="mt-1">
+                    Dùng cho hóa đơn mua đồ tại cửa hàng và trả bằng tiền mặt, ví dụ Rewe, DM, Baumarkt hoặc Metro.
+                  </p>
+                  <div class="mt-3 bg-white border border-gray-100 rounded-xl p-4 font-mono text-gray-800 overflow-x-auto">
+                    <p>2026-01-20_Rewe_48,35_Bar</p>
+                    <p>2026-01-21_DM_12,80_Bar</p>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="font-bold text-gray-900">Kasse = chứng từ quỹ tiền mặt hoặc máy tính tiền</p>
+                  <p class="mt-1">
+                    Dùng cho Z-Bon, Tagesabschluss, Kassenbericht hoặc chứng từ tổng hợp của quỹ tiền mặt.
+                  </p>
+                  <div class="mt-3 bg-white border border-gray-100 rounded-xl p-4 font-mono text-gray-800 overflow-x-auto">
+                    <p>2026-01-31_ZBon_850,70_Kasse</p>
+                    <p>2026-01-31_Kassenbericht_Januar_Kasse</p>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="font-bold text-gray-900">Umsatz = chứng từ doanh thu / báo cáo bán hàng</p>
+                  <p class="mt-1">
+                    Dùng cho báo cáo doanh thu, báo cáo Plattform hoặc hóa đơn bán ra, ví dụ SumUp, Lieferando, Uber Eats, Wolt hoặc Ausgangsrechnung.
+                  </p>
+                  <div class="mt-3 bg-white border border-gray-100 rounded-xl p-4 font-mono text-gray-800 overflow-x-auto">
+                    <p>2026-01-31_SumUp_2450,80_Umsatz</p>
+                    <p>2026-01-31_Lieferando_780,50_Umsatz</p>
+                    <p>2026-01-15_KundeA_500,00_Umsatz</p>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="font-bold text-gray-900">Vertrag = hợp đồng</p>
+                  <p class="mt-1">
+                    Dùng cho hợp đồng thuê, leasing, bảo hiểm, điện thoại, internet hoặc hợp đồng dịch vụ dài hạn.
+                  </p>
+                  <div class="mt-3 bg-white border border-gray-100 rounded-xl p-4 font-mono text-gray-800 overflow-x-auto">
+                    <p>2026-01-01_Mietvertrag_Vertrag</p>
+                    <p>2026-01-05_Leasingvertrag_Vertrag</p>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="font-bold text-gray-900">Privat = chủ doanh nghiệp thanh toán bằng tiền riêng</p>
+                  <p class="mt-1">
+                    Dùng khi hóa đơn thuộc doanh nghiệp nhưng được thanh toán bằng tài khoản cá nhân, thẻ cá nhân hoặc tiền riêng của chủ doanh nghiệp.
+                  </p>
+                  <div class="mt-3 bg-white border border-gray-100 rounded-xl p-4 font-mono text-gray-800 overflow-x-auto">
+                    <p>2026-01-10_Amazon_88,20_Privat</p>
+                    <p>2026-01-18_Tankstelle_70,00_Privat</p>
+                  </div>
+                </div>
+
+
+                <div class="bg-white rounded-xl p-5 shadow-sm">
+                  <h5 class="font-bold text-gray-900 mb-3">Không nên upload</h5>
+                  <p>Ảnh quá mờ, file thiếu trang, hóa đơn cá nhân không liên quan đến công ty hoặc cùng một chứng từ được gửi lặp lại nhiều lần qua nhiều kênh.</p>
+                </div>
+
               </div>
             </div>
           </div>
