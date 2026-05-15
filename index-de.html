@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Buchhaltungsservice Vu Ngoc Chan</title>
+  <meta name="description" content="Buchhaltungsservice Vu Ngoc Chan - Moderner und professioneller Buchhaltungsservice für Unternehmen in Deutschland." />
+  <link rel="alternate" hreflang="vi" href="index.html" />
+  <link rel="alternate" hreflang="de" href="index-de.html" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    img,
+    svg,
+    video,
+    canvas {
+      max-width: 100%;
+      height: auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    a,
+    span,
+    li,
+    strong {
+      overflow-wrap: break-word;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #003a5d 0%, #005d91 100%);
+    }
+
+    .text-datev {
+      color: #64b42d;
+    }
+
+    .bg-datev {
+      background-color: #64b42d;
+    }
+
+    .border-datev {
+      border-color: #64b42d;
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header / Navigation -->
+  <nav class="bg-[#f6f5ef] shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+
+        <!-- Logo -->
+        <a href="#home" class="flex items-center min-w-0">
+          <img
+            src="assets/images/logo-vnc.jpeg"
+            alt="Logo Buchhaltungsservice Vu Ngoc Chan"
+            class="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain rounded-md mr-3 flex-shrink-0"
+          />
+          <div class="text-base sm:text-lg md:text-2xl font-bold text-blue-900 flex flex-col leading-tight min-w-0">
+            <span class="inline-block">Buchhaltungsservice</span>
+            <span class="inline-block whitespace-nowrap text-datev">Vu Ngoc Chan</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 font-medium">
+          <a href="#home" class="hover:text-green-600 transition">Startseite</a>
+          <a href="#services" class="hover:text-green-600 transition">Leistungen</a>
+          <a href="duo-de.html" class="hover:text-green-600 transition">DATEV UO</a>
+          <a href="#contact" class="hover:text-green-600 transition">Kontakt</a>
+        </div>
+
+        <!-- Language Switcher -->
+        <div class="hidden md:flex items-center gap-2 text-sm font-semibold" aria-label="Sprache auswählen">
+          <a href="index.html" class="px-3 py-1 rounded-full border border-gray-300 text-gray-700 hover:bg-white hover:text-blue-900 transition">
+            VI
+          </a>
+          <a href="index-de.html" aria-current="page" class="px-3 py-1 rounded-full bg-datev text-white shadow-sm">
+            DE
+          </a>
+        </div>
+
+        <!-- Desktop CTA -->
+        <a href="#contact" class="hidden sm:inline-block bg-datev text-white px-4 md:px-6 py-2 rounded-full font-semibold hover:opacity-90 transition shadow-lg text-sm md:text-base">
+          Jetzt Kontakt aufnehmen
+        </a>
+
+        <!-- Mobile Button -->
+        <button id="mobile-menu-button" type="button" class="md:hidden text-blue-900 text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden pb-5">
+        <div class="flex flex-col space-y-3 font-medium">
+          <a href="#home" class="mobile-link hover:text-green-600 transition">Startseite</a>
+          <a href="#services" class="mobile-link hover:text-green-600 transition">Leistungen</a>
+          <a href="duo-de.html" class="mobile-link hover:text-green-600 transition">DATEV UO</a>
+          <a href="#contact" class="mobile-link hover:text-green-600 transition">Kontakt</a>
+
+          <div class="flex items-center gap-2 pt-3 text-sm font-semibold border-t border-gray-200">
+            <span class="text-gray-500 mr-1">Sprache:</span>
+            <a href="index.html" class="px-3 py-1 rounded-full border border-gray-300 text-gray-700">
+              Tiếng Việt
+            </a>
+            <a href="index-de.html" aria-current="page" class="px-3 py-1 rounded-full bg-datev text-white">
+              Deutsch
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="hero-gradient text-white py-16 md:py-24 px-4">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+
+      <div>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-5 leading-tight text-white">
+          <span class="inline-block">Buchhaltungsservice</span>
+          <span class="inline-block whitespace-nowrap text-datev">Vu Ngoc Chan</span>
+        </h1>
+
+        <p class="text-base md:text-lg text-blue-50/90 mb-8 leading-relaxed max-w-xl">
+          Moderner und professioneller Buchhaltungsservice für Unternehmen in Deutschland.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#services" class="w-full sm:w-auto text-center bg-white text-blue-900 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-xl">
+            Leistungen ansehen
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white/10 p-4 rounded-2xl backdrop-blur-sm">
+        <div class="bg-white rounded-xl shadow-2xl p-6 text-gray-800">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-green-100 text-datev rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-calculator text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold">
+              Klar, digital und effizient arbeiten
+            </h3>
+          </div>
+
+          <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+            Wir unterstützen Unternehmen bei der Belegbearbeitung, Finanzbuchhaltung, Lohnbuchhaltung und bei der digitalen Zusammenarbeit über DATEV Unternehmen online.
+          </p>
+
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center">
+              <i class="fas fa-check text-datev mr-2"></i>
+              Unterstützung auf Vietnamesisch und Deutsch
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-datev mr-2"></i>
+              Klare Hinweise zur Vorbereitung und Übermittlung von Belegen
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-datev mr-2"></i>
+              Unterstützung bei DATEV Unternehmen online
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-datev mr-2"></i>
+              Begleitung im laufenden Arbeitsprozess
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <section id="services" class="py-14 md:py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+          Leistungen
+        </h2>
+
+        <p class="text-gray-600 max-w-3xl mx-auto">
+          Unsere wichtigsten Leistungsbereiche im Überblick.
+        </p>
+
+        <div class="w-20 h-1 bg-datev mx-auto mt-6"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Service 1 -->
+        <div class="card-hover bg-white p-7 rounded-2xl shadow-sm border border-gray-100">
+          <div class="w-14 h-14 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center mb-5">
+            <i class="fas fa-file-invoice-dollar text-2xl"></i>
+          </div>
+
+          <h3 class="text-xl font-bold text-blue-900 mb-3">
+            Finanzbuchhaltung
+          </h3>
+
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Bearbeitung von Belegen, Bankumsätzen, Einnahmen, Ausgaben und regelmäßigen betriebswirtschaftlichen Auswertungen.
+          </p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="card-hover bg-white p-7 rounded-2xl shadow-sm border border-gray-100">
+          <div class="w-14 h-14 rounded-full bg-green-100 text-green-700 flex items-center justify-center mb-5">
+            <i class="fas fa-users text-2xl"></i>
+          </div>
+
+          <h3 class="text-xl font-bold text-blue-900 mb-3">
+            Lohnbuchhaltung
+          </h3>
+
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Unterstützung bei laufenden Lohnabrechnungen, An- und Abmeldungen von Mitarbeitenden sowie lohnrelevanten Unterlagen.
+          </p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="card-hover bg-white p-7 rounded-2xl shadow-sm border border-gray-100">
+          <div class="w-14 h-14 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center mb-5">
+            <i class="fas fa-cloud-upload-alt text-2xl"></i>
+          </div>
+
+          <h3 class="text-xl font-bold text-blue-900 mb-3">
+            DATEV Unternehmen online
+          </h3>
+
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Anleitung zur Belegübermittlung, Bankanbindung und Einsicht in bereitgestellte Auswertungen über DATEV.
+          </p>
+
+          <a href="duo-de.html" class="inline-flex items-center mt-5 text-sm font-semibold text-datev hover:underline">
+            DATEV-UO-Anleitung öffnen
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="card-hover bg-white p-7 rounded-2xl shadow-sm border border-gray-100">
+          <div class="w-14 h-14 rounded-full bg-yellow-100 text-yellow-700 flex items-center justify-center mb-5">
+            <i class="fas fa-handshake text-2xl"></i>
+          </div>
+
+          <h3 class="text-xl font-bold text-blue-900 mb-3">
+            Unternehmenssupport
+          </h3>
+
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Unterstützung bei Abläufen rund um Belege, Unterlagen, Buchhaltungsfragen und die Kommunikation mit unserem Büro.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Datev UO Preview Section -->
+  <section class="py-14 md:py-20 bg-blue-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+
+        <div>
+          <p class="text-datev font-bold uppercase tracking-wide mb-3">
+            Digital zusammenarbeiten
+          </p>
+
+          <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-5">
+            DATEV Unternehmen online
+          </h2>
+
+          <p class="text-gray-600 leading-relaxed mb-6">
+            Mit DATEV Unternehmen online können Mandanten Belege übermitteln, Belege prüfen, Bankdaten bereitstellen und vom Büro bereitgestellte Unterlagen einsehen.
+          </p>
+
+          <p class="text-gray-600 leading-relaxed mb-8">
+            Wir stellen eine eigene Anleitung bereit, damit die Nutzung von SmartLogin, Upload mobil, Upload online und weiteren Funktionen einfacher wird.
+          </p>
+
+          <a href="duo-de.html" class="inline-block bg-datev text-white px-8 py-3 rounded-lg font-bold hover:opacity-90 transition shadow-lg">
+            DATEV-UO-Anleitung öffnen
+          </a>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+          <h3 class="text-xl font-bold text-blue-900 mb-5">
+            Inhalte der DATEV-UO-Anleitung
+          </h3>
+
+          <ul class="space-y-4 text-sm text-gray-600">
+            <li class="flex gap-3">
+              <i class="fas fa-check-circle text-datev mt-1"></i>
+              <span>DATEV SmartLogin erstmalig einrichten</span>
+            </li>
+
+            <li class="flex gap-3">
+              <i class="fas fa-check-circle text-datev mt-1"></i>
+              <span>Belege per Smartphone, Computer oder Upload Mail hochladen</span>
+            </li>
+
+            <li class="flex gap-3">
+              <i class="fas fa-check-circle text-datev mt-1"></i>
+              <span>Bankverbindung einrichten und Umsätze abgleichen</span>
+            </li>
+
+            <li class="flex gap-3">
+              <i class="fas fa-check-circle text-datev mt-1"></i>
+              <span>Belege prüfen und Auswertungen ansehen</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-14 md:py-20 hero-gradient text-white">
+    <div class="max-w-7xl mx-auto px-4">
+
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white leading-tight">
+          <span class="inline-block">Buchhaltungsservice</span>
+          <span class="inline-block whitespace-nowrap text-datev">Vu Ngoc Chan</span>
+        </h2>
+
+        <p class="text-xl opacity-90">
+          Wir unterstützen Sie gerne in Deutschland
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+        <a href="tel:+493054801088" class="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:bg-white/15 transition">
+          <i class="fas fa-phone-alt text-2xl mb-4 text-datev"></i>
+          <h4 class="text-lg font-bold mb-2">Telefon</h4>
+          <p class="text-xl font-bold">+49 30 548 010 88</p>
+        </a>
+
+        <a href="mailto:info@vu-consult.de" class="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:bg-white/15 transition">
+          <i class="fas fa-envelope text-2xl mb-4 text-datev"></i>
+          <h4 class="text-lg font-bold mb-2">E-Mail</h4>
+          <p class="text-lg font-bold break-all">info@vu-consult.de</p>
+        </a>
+
+        <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/20">
+          <i class="fas fa-map-marked-alt text-2xl mb-4 text-datev"></i>
+          <h4 class="text-lg font-bold mb-2">Adresse</h4>
+          <p class="text-base">Herzbergstr. 33/34</p>
+          <p class="text-base">10365 Berlin</p>
+        </div>
+
+        <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/20">
+          <i class="fas fa-clock text-2xl mb-4 text-datev"></i>
+          <h4 class="text-lg font-bold mb-2">Öffnungszeiten</h4>
+          <p class="text-base">Montag - Freitag</p>
+          <p class="text-lg font-bold text-white">09:00 - 17:00</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+
+      <div>
+        <div class="text-2xl font-bold text-white mb-2 leading-tight">
+          <span class="inline-block">Buchhaltungsservice</span>
+          <span class="inline-block whitespace-nowrap text-datev">Vu Ngoc Chan</span>
+        </div>
+
+        <p class="text-sm">
+          Moderner und professioneller Buchhaltungsservice für Unternehmen in Deutschland.
+        </p>
+
+        <div class="mt-4 flex items-center space-x-2 text-sm text-white">
+          <i class="fas fa-envelope text-datev"></i>
+          <span>info@vu-consult.de</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16">
+
+        <div>
+          <h5 class="text-white font-bold mb-4">Menü</h5>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="#home" class="hover:text-datev transition">Startseite</a>
+            </li>
+            <li>
+              <a href="#services" class="hover:text-datev transition">Leistungen</a>
+            </li>
+            <li>
+              <a href="duo-de.html" class="hover:text-datev transition">DATEV UO</a>
+            </li>
+            <li>
+              <a href="#contact" class="hover:text-datev transition">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-white font-bold mb-4">Links</h5>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="https://www.datev.de" target="_blank" rel="noopener noreferrer" class="hover:text-datev transition">
+                DATEV Germany
+              </a>
+            </li>
+            <li>
+              <a href="impressum.html" class="hover:text-datev transition">Impressum</a>
+            </li>
+            <li>
+              <a href="datenschutz.html" class="hover:text-datev transition">Datenschutz</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-gray-800 text-center text-xs">
+      <p>
+        &copy; 2026 Buchhaltungsservice Vu Ngoc Chan. Informationsseite für Mandanten unseres Büros.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const yearElement = document.getElementById('year');
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+
+</body>
+</html>

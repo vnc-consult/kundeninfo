@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>DATEV-UO-Anleitung - Buchhaltungsservice Vu Ngoc Chan</title>
+  <meta name="description" content="Anleitung für Mandanten zur Nutzung von DATEV Unternehmen online: SmartLogin, Belege hochladen, Bankanbindung und Auswertungen ansehen." />
+  <link rel="alternate" hreflang="vi" href="duo.html" />
+  <link rel="alternate" hreflang="de" href="duo-de.html" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    img,
+    svg,
+    video,
+    canvas {
+      max-width: 100%;
+      height: auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    a,
+    span,
+    li,
+    strong {
+      overflow-wrap: break-word;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #003a5d 0%, #005d91 100%);
+    }
+
+    .text-datev {
+      color: #64b42d;
+    }
+
+    .bg-datev {
+      background-color: #64b42d;
+    }
+
+    .border-datev {
+      border-color: #64b42d;
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-5px);
+    }
+
+    .guide-card.active {
+      border-color: #64b42d;
+      box-shadow: 0 15px 35px rgba(100, 180, 45, 0.18);
+      transform: translateY(-3px);
+    }
+
+    .upload-mode-btn.active {
+      background-color: #64b42d;
+      color: white;
+      border-color: #64b42d;
+    }
+
+    .auswertung-mode-btn.active {
+      background-color: #64b42d;
+      color: white;
+      border-color: #64b42d;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header / Navigation -->
+  <nav class="bg-[#f6f5ef] shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+
+        <!-- Logo -->
+        <a href="index-de.html#home" class="flex items-center min-w-0">
+          <img
+            src="assets/images/logo-vnc.jpeg"
+            alt="Logo Buchhaltungsservice Vu Ngoc Chan"
+            class="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain rounded-md mr-3 flex-shrink-0"
+          />
+          <div class="text-base sm:text-lg md:text-2xl font-bold text-blue-900 flex flex-col leading-tight min-w-0">
+            <span class="inline-block">Buchhaltungsservice</span>
+            <span class="inline-block whitespace-nowrap text-datev">Vu Ngoc Chan</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 font-medium">
+          <a href="index-de.html#home" class="hover:text-green-600 transition">Startseite</a>
+          <a href="index-de.html#services" class="hover:text-green-600 transition">Leistungen</a>
+          <a href="#intro" class="text-datev font-semibold transition">DATEV UO</a>
+          <a href="#contact" class="hover:text-green-600 transition">Kontakt</a>
+        </div>
+
+        <!-- Language Switcher -->
+        <div class="hidden md:flex items-center gap-2 text-sm font-semibold" aria-label="Sprache auswählen">
+          <a href="duo.html" class="px-3 py-1 rounded-full border border-gray-300 text-gray-700 hover:bg-white hover:text-blue-900 transition">
+            VI
+          </a>
+          <a href="duo-de.html" aria-current="page" class="px-3 py-1 rounded-full bg-datev text-white shadow-sm">
+            DE
+          </a>
+        </div>
+
+        <!-- Desktop CTA -->
+        <a href="#contact" class="hidden sm:inline-block bg-datev text-white px-4 md:px-6 py-2 rounded-full font-semibold hover:opacity-90 transition shadow-lg text-sm md:text-base">
+          Jetzt Kontakt aufnehmen
+        </a>
+
+        <!-- Mobile Button -->
+        <button id="mobile-menu-button" type="button" class="md:hidden text-blue-900 text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden pb-5">
+        <div class="flex flex-col space-y-3 font-medium">
+          <a href="index-de.html#home" class="mobile-link hover:text-green-600 transition">Startseite</a>
+          <a href="index-de.html#services" class="mobile-link hover:text-green-600 transition">Leistungen</a>
+          <a href="#intro" class="mobile-link text-datev font-semibold transition">DATEV UO</a>
+          <a href="#contact" class="mobile-link hover:text-green-600 transition">Kontakt</a>
+
+          <div class="flex items-center gap-2 pt-3 text-sm font-semibold border-t border-gray-200">
+            <span class="text-gray-500 mr-1">Sprache:</span>
+            <a href="duo.html" class="px-3 py-1 rounded-full border border-gray-300 text-gray-700">
+              Tiếng Việt
+            </a>
+            <a href="duo-de.html" aria-current="page" class="px-3 py-1 rounded-full bg-datev text-white">
+              Deutsch
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="intro" class="hero-gradient text-white py-16 md:py-20 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col xl:flex-row items-center justify-between gap-8 xl:gap-10">
+
+      <div class="w-full xl:w-7/12 min-w-0">
+        <h1 class="text-[clamp(1.65rem,5.7vw,3rem)] font-extrabold mb-6 leading-tight text-white">
+          <span class="block">Digitale Buchhaltung mit</span>
+          <span class="block whitespace-nowrap text-datev">DATEV Unternehmen online</span>
+        </h1>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#setup" class="w-full sm:w-auto text-center bg-white text-blue-900 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-xl">
+            Nutzung starten
+          </a>
+          <a href="#guides" class="w-full sm:w-auto text-center border border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-blue-900 transition">
+            Anleitung ansehen
+          </a>
+        </div>
+      </div>
+
+      <div class="w-full xl:w-5/12 bg-white/10 p-4 rounded-2xl backdrop-blur-sm">
+        <div class="bg-white rounded-xl shadow-2xl p-6 text-gray-800">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-green-100 text-datev rounded-full flex items-center justify-center mr-4">
+              <i class="fas fa-shield-alt text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold">Digital und sicher zusammenarbeiten</h3>
+          </div>
+
+          <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+            Belege werden über das DATEV-System übermittelt. Die Anmeldung erfolgt mit sicheren Zugangsverfahren wie DATEV SmartLogin oder SmartCard.
+          </p>
+
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center"><i class="fas fa-check text-datev mr-2"></i> Weniger Papierbelege im laufenden Austausch</li>
+            <li class="flex items-center"><i class="fas fa-check text-datev mr-2"></i> Belege später einfacher wiederfinden</li>
+            <li class="flex items-center"><i class="fas fa-check text-datev mr-2"></i> Bankanbindung möglich, wenn sie freigeschaltet ist</li>
+            <li class="flex items-center"><i class="fas fa-check text-datev mr-2"></i> Zugriff auf Auswertungen und Buchhaltungsunterlagen</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Key Steps Section -->
+  <section id="setup" class="py-14 md:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">
+          Einfache Einrichtung in drei Schritten
+        </h2>
+        <div class="w-20 h-1 bg-datev mx-auto"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="card-hover bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
+          <div class="text-4xl font-bold text-green-200 mb-4">01</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
+            Registrierung & Aktivierung
+          </h3>
+          <p class="text-gray-600 leading-relaxed text-base">
+            Wir richten DATEV Unternehmen online für Sie ein. Danach nutzen Sie <strong>DATEV SmartLogin</strong> oder ein anderes freigegebenes Zugangsmedium.
+          </p>
+        </div>
+
+        <div class="card-hover bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
+          <div class="text-4xl font-bold text-green-200 mb-4">02</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
+            Belege digitalisieren
+          </h3>
+          <p class="text-gray-600 leading-relaxed text-base">
+            Eingangsrechnungen, Ausgangsrechnungen, Kassenbons und Barbelege können per <strong>DATEV Upload mobil</strong> oder über den Computer hochgeladen werden.
+          </p>
+        </div>
+
+        <div class="card-hover bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
+          <div class="text-4xl font-bold text-green-200 mb-4">03</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">
+            An das Büro übermitteln
+          </h3>
+          <p class="text-gray-600 leading-relaxed text-base">
+            Die Daten werden von unserem Büro für die Buchhaltung verarbeitet. Originalbelege müssen weiterhin nach den geltenden Vorschriften aufbewahrt werden.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Guides Section -->
+  <section id="guides" class="py-14 md:py-20 bg-blue-50">
+    <div class="max-w-7xl mx-auto px-4">
+
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-blue-900 mb-4">
+          Unterlagen für Mandanten
+        </h2>
+        <p class="text-gray-600 max-w-3xl mx-auto">
+          Wählen Sie ein Thema aus, um die passende Anleitung zu öffnen. Die Hinweise helfen dabei, DATEV Unternehmen online sicherer zu nutzen und Belege korrekt an unser Büro zu übermitteln.
+        </p>
+      </div>
+
+      <!-- 4 clickable guide cards -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+
+        <button type="button" data-guide="smartlogin" class="guide-card active text-left flex items-start p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition border-l-4 border-datev">
+          <i class="fas fa-mobile-alt text-red-500 text-3xl mr-4 mt-1"></i>
+          <div>
+            <h4 class="font-bold text-lg text-blue-900">SmartLogin-Anleitung</h4>
+            <p class="text-sm text-gray-500 mt-1">Einrichtung, Anmeldung und Sicherheit.</p>
+            <span class="inline-block mt-4 text-sm font-semibold text-datev">Anleitung öffnen <i class="fas fa-arrow-right ml-1"></i></span>
+          </div>
+        </button>
+
+        <button type="button" data-guide="upload" class="guide-card text-left flex items-start p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition border-l-4 border-gray-200">
+          <i class="fas fa-upload text-blue-500 text-3xl mr-4 mt-1"></i>
+          <div>
+            <h4 class="font-bold text-lg text-blue-900">Belege hochladen</h4>
+            <p class="text-sm text-gray-500 mt-1">Rechnungen, Kassenbons und Dokumente uploaden.</p>
+            <span class="inline-block mt-4 text-sm font-semibold text-datev">Anleitung öffnen <i class="fas fa-arrow-right ml-1"></i></span>
+          </div>
+        </button>
+
+        <button type="button" data-guide="bank" class="guide-card text-left flex items-start p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition border-l-4 border-gray-200">
+          <i class="fas fa-university text-green-600 text-3xl mr-4 mt-1"></i>
+          <div>
+            <h4 class="font-bold text-lg text-blue-900">Bankanbindung</h4>
+            <p class="text-sm text-gray-500 mt-1">Bankumsätze und Abgleich mit Belegen.</p>
+            <span class="inline-block mt-4 text-sm font-semibold text-datev">Anleitung öffnen <i class="fas fa-arrow-right ml-1"></i></span>
+          </div>
+        </button>
+
+        <button type="button" data-guide="auswertung" class="guide-card text-left flex items-start p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition border-l-4 border-gray-200">
+          <i class="fas fa-chart-line text-purple-600 text-3xl mr-4 mt-1"></i>
+          <div>
+            <h4 class="font-bold text-lg text-blue-900">Belege & Auswertungen</h4>
+            <p class="text-sm text-gray-500 mt-1">Belege prüfen und Berichte ansehen.</p>
+            <span class="inline-block mt-4 text-sm font-semibold text-datev">Anleitung öffnen <i class="fas fa-arrow-right ml-1"></i></span>
+          </div>
+        </button>
+
+      </div>
+
+      <!-- Detailed content area -->
+      <div id="guide-content" class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+
+        <!-- SmartLogin Guide -->
+        <div class="guide-detail" data-content="smartlogin">
+          <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-0">
+
+            <div class="p-8 md:p-10">
+              <div class="flex items-center mb-6">
+                <div class="w-14 h-14 rounded-full bg-red-100 text-red-500 flex items-center justify-center mr-4">
+                  <i class="fas fa-mobile-alt text-2xl"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-datev uppercase tracking-wide">Unterlage 01</p>
+                  <h3 class="text-2xl md:text-3xl font-bold text-blue-900">
+                    DATEV SmartLogin erstmalig einrichten
+                  </h3>
+                </div>
+              </div>
+
+              <p class="text-gray-600 mb-8 leading-relaxed">
+                DATEV SmartLogin ist die App zur Bestätigung Ihrer Identität bei der Anmeldung in DATEV Unternehmen online. Die App muss eingerichtet sein, bevor Belege hochgeladen oder Unterlagen online eingesehen werden können.
+              </p>
+
+              <div class="space-y-5">
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Vorbereitung</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Halten Sie Ihr regelmäßig genutztes Smartphone, den DATEV-Registrierungsbrief oder Aktivierungscode, die beim Büro hinterlegte E-Mail-Adresse und eine stabile Internetverbindung bereit. Planen Sie am besten 10 bis 15 ruhige Minuten ein.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">DATEV SmartLogin installieren</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Öffnen Sie den App Store auf dem iPhone oder Google Play auf Android. Suchen Sie nach <strong>DATEV SmartLogin</strong> und installieren Sie die App. Achten Sie darauf, dass der Anbieter DATEV ist.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">„Jetzt registrieren“ auswählen</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Öffnen Sie die App und tippen Sie auf <strong>Jetzt registrieren</strong>. Wenn ein Sicherheitshinweis erscheint, lesen Sie ihn kurz und tippen Sie anschließend auf <strong>Weiter</strong> oder den entsprechenden Fortsetzen-Button.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">QR-Code aus dem Registrierungsbrief scannen</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Öffnen Sie den DATEV-Registrierungsbrief und scannen Sie den QR-Code mit der App. Legen Sie den Brief auf eine helle, ebene Fläche und halten Sie das Smartphone ruhig, damit der QR-Code gut erkannt wird.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">5</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Alternativ manuell eingeben</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Wenn der QR-Code nicht gelesen werden kann, wählen Sie die manuelle Eingabe. Geben Sie <strong>SmartLogin-ID</strong> und <strong>Registrierungscode</strong> exakt aus dem Brief ein. Achten Sie auf mögliche Verwechslungen wie O und 0 oder I und 1.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">6</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Passwort oder PIN festlegen</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Die App fordert Sie auf, ein Passwort oder eine PIN einzurichten. Wählen Sie eine sichere Kombination, die Sie sich gut merken können. Senden Sie niemals Passwort, PIN, QR-Code oder Registrierungscode per WhatsApp, E-Mail oder Nachricht an andere Personen.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">7</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">E-Mail-Aktivierung bestätigen, falls erforderlich</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      DATEV kann nach der Registrierung eine Aktivierungs-E-Mail an die hinterlegte Adresse senden. Öffnen Sie die E-Mail und klicken Sie auf den Aktivierungslink. Prüfen Sie auch Spam oder Junk, falls keine E-Mail sichtbar ist.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">8</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Bereitschaft der App prüfen</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Öffnen Sie DATEV SmartLogin erneut. Wenn die App anzeigt, dass SmartLogin eingerichtet oder bereit ist, können Sie die App zur Anmeldung in DATEV Unternehmen online verwenden.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">9</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Anmeldung in DATEV Unternehmen online testen</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Öffnen Sie DATEV Unternehmen online am Computer oder Smartphone. Wenn das System eine Bestätigung verlangt, wählen Sie DATEV SmartLogin. Scannen Sie den angezeigten Code oder bestätigen Sie die Anmeldung in der App und geben Sie bei Bedarf Ihre PIN ein.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">10</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Zugriffsrechte kontrollieren</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Prüfen Sie nach erfolgreicher Anmeldung, ob die richtige Firma und die benötigten Bereiche wie Belege, Upload oder Auswertungen sichtbar sind. Falls etwas fehlt, senden Sie unserem Büro bitte einen Screenshot.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">11</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Bei Handywechsel oder Verlust sofort melden</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Wenn Sie das Smartphone wechseln, das Gerät verlieren oder nicht mehr auf die App zugreifen können, informieren Sie bitte unser Büro. Löschen oder installieren Sie die App nicht mehrfach neu, wenn Sie unsicher sind.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="mt-8 p-5 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-yellow-900">
+                <strong>Hinweis:</strong> Bei Fehlermeldungen senden Sie bitte einen Screenshot. So kann das Büro schneller prüfen, ob der Code abgelaufen ist, die E-Mail-Aktivierung fehlt, Daten falsch eingegeben wurden oder Rechte fehlen.
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-gray-100">
+              <h4 class="text-xl font-bold text-blue-900 mb-5">
+                Das sollten Sie bereithalten
+              </h4>
+
+              <ul class="space-y-4 text-sm text-gray-600">
+                <li class="flex gap-3">
+                  <i class="fas fa-check-circle text-datev mt-1"></i>
+                  <span>Regelmäßig genutztes Smartphone mit Internetverbindung.</span>
+                </li>
+                <li class="flex gap-3">
+                  <i class="fas fa-check-circle text-datev mt-1"></i>
+                  <span>DATEV-Registrierungsbrief, QR-Code oder Aktivierungscode.</span>
+                </li>
+                <li class="flex gap-3">
+                  <i class="fas fa-check-circle text-datev mt-1"></i>
+                  <span>Die beim Büro hinterlegte E-Mail-Adresse.</span>
+                </li>
+                <li class="flex gap-3">
+                  <i class="fas fa-check-circle text-datev mt-1"></i>
+                  <span>Etwa 10 bis 15 Minuten Zeit für Einrichtung und Test.</span>
+                </li>
+              </ul>
+
+              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Häufige Probleme</h5>
+                <ul class="space-y-2 text-sm text-gray-600">
+                  <li class="flex gap-2"><i class="fas fa-exclamation-circle text-red-400 mt-1"></i><span>Keine Aktivierungs-E-Mail erhalten.</span></li>
+                  <li class="flex gap-2"><i class="fas fa-exclamation-circle text-red-400 mt-1"></i><span>Aktivierungslink oder Registrierungscode ist abgelaufen.</span></li>
+                  <li class="flex gap-2"><i class="fas fa-exclamation-circle text-red-400 mt-1"></i><span>QR-Code kann nicht gescannt werden.</span></li>
+                  <li class="flex gap-2"><i class="fas fa-exclamation-circle text-red-400 mt-1"></i><span>SmartLogin-ID oder Registrierungscode wurde falsch eingegeben.</span></li>
+                  <li class="flex gap-2"><i class="fas fa-exclamation-circle text-red-400 mt-1"></i><span>Smartphonewechsel oder Verlust des Smartphones.</span></li>
+                  <li class="flex gap-2"><i class="fas fa-exclamation-circle text-red-400 mt-1"></i><span>Die App zeigt keine Bestätigung zur Anmeldung an.</span></li>
+                </ul>
+
+                <p class="mt-4 pt-4 border-t border-gray-200 text-sm text-gray-600">
+                  Bitte senden Sie in solchen Fällen einen Screenshot der Meldung an unser Büro.
+                </p>
+              </div>
+
+              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Bitte vermeiden</h5>
+                <p class="text-sm text-gray-600">
+                  Geben Sie PIN, Passwort, Registrierungscode oder QR-Code nicht an andere Personen weiter. Installieren oder löschen Sie die App nicht mehrfach, wenn Sie unsicher sind.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upload Guide -->
+        <div class="guide-detail hidden" data-content="upload">
+          <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-0">
+            <div class="p-8 md:p-10">
+              <div class="flex items-center mb-6">
+                <div class="w-14 h-14 rounded-full bg-blue-100 text-blue-500 flex items-center justify-center mr-4">
+                  <i class="fas fa-cloud-upload-alt text-2xl"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-datev uppercase tracking-wide">Unterlage 02</p>
+                  <h3 class="text-2xl md:text-3xl font-bold text-blue-900">Belege in DATEV UO hochladen</h3>
+                </div>
+              </div>
+
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                Belege können auf drei Wegen an DATEV übermittelt werden. Wählen Sie die passende Methode, damit die Buchhaltung schneller verarbeitet werden kann und doppelte Belege vermieden werden.
+              </p>
+
+              <div class="flex flex-wrap gap-3 mb-8">
+                <button type="button" data-upload-mode="phone" class="upload-mode-btn active px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">Upload per Smartphone</button>
+                <button type="button" data-upload-mode="desktop" class="upload-mode-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">Upload am Computer</button>
+                <button type="button" data-upload-mode="mail" class="upload-mode-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">Upload Mail</button>
+              </div>
+
+              <div class="upload-mode-content" data-upload-content="phone">
+                <div class="bg-blue-50 rounded-xl p-5 border border-blue-100 mb-6">
+                  <h4 class="font-bold text-blue-900 mb-2">
+                    <i class="fas fa-mobile-alt mr-2"></i>Upload per Smartphone
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    Geeignet für Papierbelege, Kassenbons, Bewirtungsbelege, Tankbelege, Einkaufsbelege oder Unterlagen, die schnell von unterwegs hochgeladen werden sollen.
+                  </p>
+                </div>
+
+                <div class="space-y-5">
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Beleg vorbereiten</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Legen Sie den Beleg auf eine ebene, helle Fläche. Glätten Sie den Beleg, wenn er gefaltet oder zerknittert ist. Prüfen Sie, ob Datum, Betrag, Umsatzsteuer, Lieferant und Rechnungsnummer gut lesbar sind.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">DATEV Upload mobil öffnen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Installieren Sie bei Bedarf die App <strong>DATEV Upload mobil</strong> aus dem App Store oder Google Play. Melden Sie sich mit dem freigegebenen Zugangsmedium, zum Beispiel DATEV SmartLogin, an.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Beleg hinzufügen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Tippen Sie in der App auf „+“, „Beleg hinzufügen“, „Foto aufnehmen“ oder einen ähnlichen Button. Sie können direkt fotografieren oder eine bereits vorhandene Datei aus dem Smartphone auswählen.
+                      </p>
+                      <p class="text-gray-600 text-sm mt-2">
+                        Liegt die Rechnung in E-Mail, WhatsApp, Fotos oder einer anderen App, können Sie die Datei über <strong>Teilen / Share</strong> an <strong>DATEV Upload mobil</strong> übergeben.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Alle Ecken und Inhalte fotografieren</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Halten Sie das Smartphone möglichst gerade. Der Beleg soll vollständig im Bild sein. Es dürfen keine Ecken, Beträge, Steuerangaben, Daten oder Rechnungsnummern abgeschnitten sein.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">5</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Foto kontrollieren</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Prüfen Sie nach der Aufnahme, ob das Bild scharf, hell genug und vollständig ist. Wenn Text unlesbar ist oder ein Teil fehlt, löschen Sie das Bild und fotografieren Sie den Beleg erneut.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">6</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Mehrseitige Belege vollständig hochladen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Besteht eine Rechnung, ein Vertrag oder ein Dokument aus mehreren Seiten, laden Sie alle Seiten gemeinsam als einen Beleg hoch. Einzelne Seiten derselben Rechnung sollten nicht getrennt übermittelt werden.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">7</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Pro Rechnung ein Beleg</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Jede Rechnung, jeder Kassenbon und jeder Einzelbeleg sollte separat hochgeladen werden. Fotografieren Sie nicht mehrere unterschiedliche Belege in einem Bild.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">8</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Beleg sinnvoll benennen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Verwenden Sie möglichst dieses Schema:<br>
+                        <strong>YYYY-MM-DD_Kurzname_Betrag_Belegtyp</strong><br>
+                        Beispiele:<br>
+                        <strong>2026-01-15_Telekom_59,99_Bank</strong><br>
+                        <strong>2026-01-20_Rewe_48,35_Bar</strong>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">9</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Richtigen Belegtyp wählen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Wählen Sie, wenn das System danach fragt, den passenden Belegtyp aus, zum Beispiel <strong>Bank</strong>, <strong>Bar</strong>, <strong>Kasse</strong>, <strong>Umsatz</strong>, <strong>Vertrag</strong> oder <strong>Sonstiges</strong>. Wenn Sie unsicher sind, wählen Sie Sonstiges oder fragen Sie unser Büro.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">10</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Upload starten</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Tippen Sie nach der Prüfung auf „Upload“, „Zum Upload“, das Wolken-Symbol oder einen ähnlichen Senden-Button. Bestätigen Sie die Übertragung, wenn die App danach fragt.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">11</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Erfolgreichen Upload abwarten</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Schließen Sie die App nicht sofort. Warten Sie, bis der Upload erfolgreich abgeschlossen ist oder der Beleg in der Liste erscheint.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">12</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Doppelte Übermittlung vermeiden</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Wenn ein Beleg erfolgreich per Smartphone hochgeladen wurde, senden Sie denselben Beleg normalerweise nicht zusätzlich per Computer, E-Mail oder Upload Mail.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8 p-5 bg-red-50 border border-red-100 rounded-xl text-sm text-red-900">
+                  <strong>Wichtig:</strong> Der Upload in DATEV ersetzt nicht automatisch die Aufbewahrungspflicht. Originalbelege müssen weiterhin nach den geltenden Vorschriften aufbewahrt werden.
+                </div>
+              </div>
+
+              <div class="upload-mode-content hidden" data-upload-content="desktop">
+                <div class="bg-purple-50 rounded-xl p-5 border border-purple-100 mb-6">
+                  <h4 class="font-bold text-blue-900 mb-2">
+                    <i class="fas fa-laptop mr-2"></i>Upload am Computer
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    Geeignet für PDF-Rechnungen aus E-Mails, Verträge, mehrseitige Scans, Kontoauszüge, Z-Bons oder Dateien, die bereits auf dem Computer gespeichert sind.
+                  </p>
+                </div>
+
+                <div class="space-y-5">
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Datei auf dem Computer speichern</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Laden Sie die Rechnung aus der E-Mail auf den Computer herunter, zum Beispiel in Downloads, auf den Desktop oder in einen eigenen Ordner wie <strong>Belege 2026</strong>.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Lesbarkeit prüfen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Öffnen Sie die Datei vor dem Upload. Prüfen Sie, ob Datum, Betrag, Umsatzsteuer, Lieferant, Rechnungsnummer und alle Seiten vorhanden und lesbar sind.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Pro Rechnung eine Datei</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Eine Rechnung sollte als eine eigene Datei hochgeladen werden. Mehrere unterschiedliche Rechnungen sollten nicht in einer PDF zusammengefasst werden.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Datei sinnvoll benennen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Verwenden Sie möglichst dieses Schema:<br>
+                        <strong>YYYY-MM-DD_Kurzname_Betrag_Belegtyp</strong><br>
+                        Beispiele:<br>
+                        <strong>2026-01-15_Telekom_59,99_Bank.pdf</strong><br>
+                        <strong>2026-01-20_Rewe_48,35_Bar.pdf</strong>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">5</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">DATEV Unternehmen online öffnen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Öffnen Sie einen Browser wie Chrome, Edge, Safari oder Firefox. Öffnen Sie anschließend
+                        <a
+                          href="https://www.datev.de/web/de/berufsgruppenuebergreifend/mydatev/cloud-anwendungen/datev-unternehmen-online"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="text-datev font-semibold hover:underline"
+                        >
+                          DATEV Unternehmen online
+                        </a>
+                        und klicken Sie auf <strong>jetzt starten</strong>.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">6</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Mit SmartLogin anmelden</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Wählen Sie DATEV SmartLogin oder das freigegebene Zugangsmedium. Bestätigen Sie die Anmeldung am Smartphone und geben Sie bei Bedarf die PIN ein.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">7</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">„Belege hochladen“ auswählen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Wählen Sie in DATEV Unternehmen online <strong>Belege hochladen</strong>. Wenn ein Belegtyp abgefragt wird, wählen Sie zum Beispiel Bank, Bar, Kasse, Umsatz, Vertrag oder Sonstiges. Wählen Sie anschließend die Datei aus oder ziehen Sie die Datei in den Upload-Bereich.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">8</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Datei vor der Übertragung prüfen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Prüfen Sie in der Vorschau, ob die Datei vollständig und lesbar ist. Falls mehrere Dokumente versehentlich zusammen hochgeladen wurden, können Funktionen wie Trennen, Zusammenfügen oder Vorschau helfen.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">9</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">„Datei übertragen“ klicken</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Wenn alles korrekt ist, klicken Sie auf <strong>Datei übertragen</strong>. Schließen Sie den Browser erst, wenn der Upload erfolgreich abgeschlossen wurde.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">10</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Upload kontrollieren</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Prüfen Sie nach dem Upload, ob die richtige Datei und die richtige Anzahl von Dateien übertragen wurden. Bei Fehlermeldungen senden Sie bitte einen Screenshot an unser Büro.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">11</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Nicht doppelt senden</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Wenn eine Datei erfolgreich hochgeladen wurde, senden Sie dieselbe Datei normalerweise nicht nochmals per Smartphone, E-Mail oder Upload Mail.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8 p-5 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-yellow-900">
+                  <strong>Hinweis:</strong> Mandanten müssen keine komplizierten Einstellungen vornehmen. Wichtig ist vor allem: Datei speichern, prüfen, hochladen und die erfolgreiche Übertragung abwarten.
+                </div>
+              </div>
+
+              <div class="upload-mode-content hidden" data-upload-content="mail">
+                <div class="bg-green-50 rounded-xl p-5 border border-green-100 mb-6">
+                  <h4 class="font-bold text-blue-900 mb-2">
+                    <i class="fas fa-envelope mr-2"></i>Upload Mail
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    Geeignet für elektronische Rechnungen, die per E-Mail eingehen, zum Beispiel Telefon, Internet, Software, Amazon, Lieferantenrechnungen oder regelmäßige PDF-Rechnungen.
+                  </p>
+                </div>
+
+                <div class="space-y-5">
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Prüfen, ob Upload Mail eingerichtet ist</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Upload Mail funktioniert nur, wenn unser Büro eine eigene Upload-Mail-Adresse für Ihr Unternehmen eingerichtet hat. Wenn Sie diese Adresse noch nicht erhalten haben, fragen Sie bitte zuerst unser Büro.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">E-Mail mit Rechnung öffnen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Öffnen Sie die E-Mail des Lieferanten und prüfen Sie, ob die Rechnung wirklich zum Unternehmen gehört und die richtige Datei angehängt ist.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Anhang prüfen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Öffnen Sie die PDF-Datei kurz, wenn Sie unsicher sind. Die Datei sollte vollständig, lesbar und die eigentliche Rechnung sein.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">E-Mail weiterleiten</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Klicken Sie auf <strong>Weiterleiten</strong> oder <strong>Forward</strong> und senden Sie die E-Mail an die Upload-Mail-Adresse, die Ihnen unser Büro mitgeteilt hat. Tippen Sie die Adresse nicht neu ab, wenn Sie unsicher sind, sondern kopieren Sie sie aus der erhaltenen Information.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">5</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">PDF-Anhang nicht löschen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Lassen Sie die originale PDF-Rechnung in der E-Mail. Ein Screenshot sollte nicht verwendet werden, wenn eine echte PDF-Rechnung vorhanden ist.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">6</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Unnötige Anhänge vermeiden</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Wenn die E-Mail zusätzliche Werbung, Bilder, AGB oder andere nicht relevante Dateien enthält, prüfen Sie vor dem Versand, was wirklich zur Rechnung gehört.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">7</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Kurze Notiz bei Bedarf</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Wenn der Beleg erklärt werden muss, können Sie eine kurze Notiz schreiben, zum Beispiel <strong>privat bezahlt</strong>, <strong>bar bezahlt</strong>, <strong>für Januar 2026</strong> oder <strong>gehört zur Kasse</strong>.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">8</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">E-Mail senden und Verarbeitung abwarten</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Senden Sie die E-Mail erst nach Prüfung der Adresse und Anhänge. Die Verarbeitung in DATEV kann etwas Zeit benötigen, daher nicht sofort mehrfach senden.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">9</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Keine Mehrfachübermittlung</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Wenn die Rechnung per Upload Mail gesendet wurde, laden Sie dieselbe Rechnung normalerweise nicht zusätzlich per Smartphone oder Computer hoch.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">10</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Bei Unsicherheit Screenshot senden</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Wenn Sie unsicher sind, ob die E-Mail korrekt gesendet wurde oder ob eine Fehlermeldung erscheint, senden Sie unserem Büro bitte einen Screenshot.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8 p-5 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-yellow-900">
+                  <strong>Hinweis:</strong> Upload Mail eignet sich vor allem für Belege, die per E-Mail mit klarer PDF-Datei eingehen. Für Papierbelege oder Kassenbons ist DATEV Upload mobil meist besser geeignet.
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-gray-100">
+              <h4 class="text-xl font-bold text-blue-900 mb-5">Allgemeine Hinweise</h4>
+
+              <div class="space-y-5 text-sm text-gray-600">
+
+                <div class="bg-white rounded-xl p-5 shadow-sm">
+                  <h5 class="font-bold text-gray-900 mb-2">Grundregeln für den Upload</h5>
+                  <ul class="space-y-3">
+                    <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>Jede Rechnung möglichst als eigenen Beleg hochladen.</span></li>
+                    <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>Mehrseitige Rechnungen vollständig in einem Beleg hochladen.</span></li>
+                    <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>Originalbelege weiterhin nach den geltenden Vorschriften aufbewahren.</span></li>
+                    <li class="flex gap-3"><i class="fas fa-exclamation-circle text-red-400 mt-1"></i><span>Keine unscharfen Bilder, unvollständigen Dateien, privaten Belege ohne Bezug zum Unternehmen oder doppelt gesendeten Belege hochladen.</span></li>
+                  </ul>
+                </div>
+
+                <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                  <h5 class="font-bold text-gray-900 mb-3">
+                    Dateiname & Belegtyp
+                  </h5>
+
+                  <p class="text-sm text-gray-600">
+                    Bitte verwenden Sie möglichst dieses Schema:
+                  </p>
+
+                  <div class="mt-3 overflow-x-auto">
+                    <code class="block w-max whitespace-nowrap font-mono text-sm text-gray-800 bg-gray-50 border border-gray-100 rounded-xl px-4 py-3">
+                      YYYY-MM-DD_Kurzname_Betrag_Belegtyp
+                    </code>
+                  </div>
+
+                  <div class="mt-5 space-y-3">
+
+                    <div class="border-t border-gray-100 pt-3">
+                      <div class="flex flex-col sm:flex-row sm:items-start gap-3">
+                        <span class="w-max sm:min-w-[92px] text-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold flex-shrink-0">
+                          Bank
+                        </span>
+
+                        <div class="min-w-0 flex-1">
+                          <p class="text-sm text-gray-600">
+                            Kostenbelege, die über das Bankkonto bezahlt wurden, zum Beispiel Telefon, Miete, Versicherung oder Software.
+                          </p>
+                          <div class="mt-2 overflow-x-auto">
+                            <code class="block w-max whitespace-nowrap font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">
+                              2026-01-15_Telekom_59,99_Bank
+                            </code>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="border-t border-gray-100 pt-3">
+                      <div class="flex flex-col sm:flex-row sm:items-start gap-3">
+                        <span class="w-max sm:min-w-[92px] text-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold flex-shrink-0">
+                          Bar
+                        </span>
+
+                        <div class="min-w-0 flex-1">
+                          <p class="text-sm text-gray-600">
+                            Rechnungen oder Quittungen, die bar bezahlt wurden, zum Beispiel Rewe, DM, Metro oder Baumarkt.
+                          </p>
+                          <div class="mt-2 overflow-x-auto">
+                            <code class="block w-max whitespace-nowrap font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">
+                              2026-01-20_Rewe_48,35_Bar
+                            </code>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="border-t border-gray-100 pt-3">
+                      <div class="flex flex-col sm:flex-row sm:items-start gap-3">
+                        <span class="w-max sm:min-w-[92px] text-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold flex-shrink-0">
+                          Kasse
+                        </span>
+
+                        <div class="min-w-0 flex-1">
+                          <p class="text-sm text-gray-600">
+                            Kassenunterlagen, zum Beispiel Z-Bon, Kassenbericht oder Tagesabschluss.
+                          </p>
+                          <div class="mt-2 overflow-x-auto">
+                            <code class="block w-max whitespace-nowrap font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">
+                              2026-01-31_ZBon_850,70_Kasse
+                            </code>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="border-t border-gray-100 pt-3">
+                      <div class="flex flex-col sm:flex-row sm:items-start gap-3">
+                        <span class="w-max sm:min-w-[92px] text-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold flex-shrink-0">
+                          Umsatz
+                        </span>
+
+                        <div class="min-w-0 flex-1">
+                          <p class="text-sm text-gray-600">
+                            Umsatzbelege, Plattformabrechnungen oder Ausgangsrechnungen, zum Beispiel Flatpay, Wolt, SumUp oder Lieferando.
+                          </p>
+                          <div class="mt-2 overflow-x-auto">
+                            <code class="block w-max whitespace-nowrap font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">
+                              2026-01-31_Flatpay_2450,80_Umsatz
+                            </code>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="border-t border-gray-100 pt-3">
+                      <div class="flex flex-col sm:flex-row sm:items-start gap-3">
+                        <span class="w-max sm:min-w-[92px] text-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold flex-shrink-0">
+                          Vertrag
+                        </span>
+
+                        <div class="min-w-0 flex-1">
+                          <p class="text-sm text-gray-600">
+                            Mietverträge, Leasingverträge, Versicherungsverträge, Telefon- oder Internetverträge und langfristige Dienstleistungsverträge.
+                          </p>
+                          <div class="mt-2 overflow-x-auto">
+                            <code class="block w-max whitespace-nowrap font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">
+                              2026-01-01_Mietvertrag_Vertrag
+                            </code>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="border-t border-gray-100 pt-3">
+                      <div class="flex flex-col sm:flex-row sm:items-start gap-3">
+                        <span class="w-max sm:min-w-[92px] text-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold flex-shrink-0">
+                          Sonstiges
+                        </span>
+
+                        <div class="min-w-0 flex-1">
+                          <p class="text-sm text-gray-600">
+                            Sonstige Unterlagen, private Hinweise oder Fälle, bei denen der richtige Belegtyp unklar ist.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bank Guide -->
+        <div class="guide-detail hidden" data-content="bank">
+          <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-0">
+
+            <div class="p-8 md:p-10">
+              <div class="flex items-center mb-6">
+                <div class="w-14 h-14 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-4">
+                  <i class="fas fa-university text-2xl"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-datev uppercase tracking-wide">Unterlage 03</p>
+                  <h3 class="text-2xl md:text-3xl font-bold text-blue-900">
+                    Bankanbindung in DATEV
+                  </h3>
+                </div>
+              </div>
+
+              <p class="text-gray-600 mb-8 leading-relaxed">
+                Die Bankanbindung ermöglicht es unserem Büro, Bankumsätze in DATEV abzurufen und mit Rechnungen und Belegen abzugleichen. Mandanten müssen nicht selbst buchen. Wichtig ist, dass die richtigen Konten genannt und erforderliche Freigaben bestätigt werden.
+              </p>
+
+              <div class="space-y-5">
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Dem Büro die zu bearbeitenden Konten nennen</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Teilen Sie uns mit, welche Bankkonten geschäftlich genutzt werden. Wenn mehrere Konten vorhanden sind, sagen Sie bitte genau, welche Konten in der Buchhaltung verarbeitet werden sollen.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Passende Anbindungsart prüfen</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Unser Büro prüft, welche Methode für das jeweilige Konto möglich ist, zum Beispiel RZ-Bankinfo, PIN/TAN, EBICS oder manueller Import. Nicht jede Bank unterstützt jede Methode.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Freigabe bestätigen, wenn erforderlich</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Je nach Bank und Anbindung kann eine Teilnahmeerklärung oder eine Bestätigung im Online-Banking, in der TAN-App, per photoTAN, chipTAN oder einem anderen Sicherheitsverfahren erforderlich sein.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-4">
+                  <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
+                  <div>
+                    <h4 class="font-bold text-gray-900">Keine Passwörter, PINs oder TANs senden</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                      Unser Büro begleitet den Prozess und prüft die Einrichtung in DATEV. Passwörter, Online-Banking-PINs, TANs oder Sicherheitscodes dürfen nicht an unser Büro oder andere Personen gesendet werden.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="mt-8 p-5 bg-blue-50 border border-blue-100 rounded-xl text-sm text-blue-900">
+                <strong>Wichtig:</strong> Eine Bankanbindung ersetzt nicht das Hochladen von Belegen. Bankumsätze zeigen nur, dass Geld ein- oder ausgegangen ist. Die Rechnung oder der Beleg erklärt, wofür die Zahlung war.
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-gray-100">
+              <h4 class="text-xl font-bold text-blue-900 mb-5">
+                Das sollten Sie bereithalten
+              </h4>
+
+              <ul class="space-y-4 text-sm text-gray-600">
+                <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>Name der Bank und IBAN des Geschäftskontos.</span></li>
+                <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>Information, welche Konten in der Buchhaltung verarbeitet werden sollen.</span></li>
+                <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>Zugang zum Online-Banking, falls eine Bestätigung notwendig ist.</span></li>
+                <li class="flex gap-3"><i class="fas fa-check-circle text-datev mt-1"></i><span>TAN-App, photoTAN, chipTAN oder Bank-App, falls erforderlich.</span></li>
+              </ul>
+
+              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Mögliche Verfahren</h5>
+                <ul class="space-y-3 text-sm text-gray-600">
+                  <li><strong>RZ-Bankinfo:</strong> Bankumsätze werden über DATEV bereitgestellt, wenn die Bank dies unterstützt und die Freigabe eingerichtet ist.</li>
+                  <li><strong>PIN/TAN:</strong> Bestätigung erfolgt über Online-Banking und das Sicherheitsverfahren der Bank.</li>
+                  <li><strong>EBICS:</strong> Wird häufig bei professionelleren Bankanbindungen von Unternehmen genutzt.</li>
+                  <li><strong>Manueller Import:</strong> Bankumsätze werden als Datei bereitgestellt, zum Beispiel CAMT.053, MT940 oder CSV.</li>
+                </ul>
+              </div>
+
+              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Nicht an das Büro senden</h5>
+                <ul class="space-y-2 text-sm text-gray-600">
+                  <li class="flex gap-2"><i class="fas fa-times-circle text-red-400 mt-1"></i><span>Online-Banking-Passwort.</span></li>
+                  <li class="flex gap-2"><i class="fas fa-times-circle text-red-400 mt-1"></i><span>Bank-PIN.</span></li>
+                  <li class="flex gap-2"><i class="fas fa-times-circle text-red-400 mt-1"></i><span>TAN oder Bestätigungscode.</span></li>
+                  <li class="flex gap-2"><i class="fas fa-times-circle text-red-400 mt-1"></i><span>Screenshots mit Sicherheitsdaten.</span></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Belege & Auswertungen Guide -->
+        <div class="guide-detail hidden" data-content="auswertung">
+          <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-0">
+
+            <div class="p-8 md:p-10">
+              <div class="flex items-center mb-6">
+                <div class="w-14 h-14 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center mr-4">
+                  <i class="fas fa-chart-line text-2xl"></i>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-datev uppercase tracking-wide">Unterlage 04</p>
+                  <h3 class="text-2xl md:text-3xl font-bold text-blue-900">
+                    Belege prüfen & Auswertungen ansehen
+                  </h3>
+                </div>
+              </div>
+
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                In DATEV Unternehmen online können Mandanten hochgeladene Belege kontrollieren und vom Büro bereitgestellte Unterlagen einsehen. Dieser Bereich ist in zwei Teile gegliedert.
+              </p>
+
+              <div class="flex flex-wrap gap-3 mb-8">
+                <button type="button" data-auswertung-mode="belege" class="auswertung-mode-btn active px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">
+                  Belege prüfen
+                </button>
+                <button type="button" data-auswertung-mode="reports" class="auswertung-mode-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">
+                  Auswertungen ansehen
+                </button>
+              </div>
+
+              <!-- Belege content -->
+              <div class="auswertung-mode-content" data-auswertung-content="belege">
+                <div class="bg-purple-50 rounded-xl p-5 border border-purple-100 mb-6">
+                  <h4 class="font-bold text-blue-900 mb-2">
+                    <i class="fas fa-file-alt mr-2"></i>Belege prüfen
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    Belege sind Rechnungen, Kassenbons, Verträge oder andere Unterlagen, die in DATEV hochgeladen wurden. In der <strong>Belegübersicht anzeigen</strong> können Sie prüfen, ob ein Beleg korrekt übermittelt wurde.
+                  </p>
+                </div>
+
+                <div class="space-y-5">
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Belegübersicht anzeigen öffnen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Öffnen Sie in DATEV Unternehmen online den Bereich <strong>Belegübersicht anzeigen</strong>, um hochgeladene Belege zu sehen.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Belege kontrollieren</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Prüfen Sie, ob der Beleg zur richtigen Firma, zum richtigen Zeitraum und zum passenden Belegtyp gehört und ob die Datei lesbar ist.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Korrigieren oder löschen, solange nicht verarbeitet</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Wenn ein gerade hochgeladener Beleg falsch, unscharf oder unvollständig ist, kann er unter Umständen korrigiert oder gelöscht werden, solange er noch nicht verarbeitet beziehungsweise nicht als <strong>gebucht</strong> markiert ist.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Nicht selbst ändern, wenn bereits verarbeitet</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Wenn ein Beleg bereits verarbeitet oder als <strong>gebucht</strong> markiert ist, nehmen Sie bitte keine weiteren Änderungen vor. Senden Sie stattdessen einen Screenshot an unser Büro.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8 p-5 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-yellow-900">
+                  <strong>Hinweis:</strong> Wenn Sie unsicher sind, ob ein Beleg bereits verarbeitet wurde, löschen oder laden Sie ihn bitte nicht mehrfach hoch. Fragen Sie zuerst unser Büro.
+                </div>
+              </div>
+
+              <!-- Auswertungen content -->
+              <div class="auswertung-mode-content hidden" data-auswertung-content="reports">
+                <div class="bg-indigo-50 rounded-xl p-5 border border-indigo-100 mb-6">
+                  <h4 class="font-bold text-blue-900 mb-2">
+                    <i class="fas fa-chart-line mr-2"></i>Auswertungen ansehen
+                  </h4>
+                  <p class="text-sm text-gray-600">
+                    Auswertungen sind Berichte oder Unterlagen, die unser Büro bereitstellt, zum Beispiel BWA, SuSa, OPOS oder Lohnunterlagen.
+                  </p>
+                </div>
+
+                <div class="space-y-5">
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">1</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Auswertungen anzeigen öffnen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Klicken Sie in DATEV Unternehmen online auf <strong>Auswertungen anzeigen</strong>, um bereitgestellte Unterlagen zu öffnen.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Dokument öffnen oder herunterladen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Wenn die gewünschte Unterlage sichtbar ist, können Sie sie direkt öffnen oder herunterladen, um sie intern zu speichern, auszudrucken oder an die zuständige Person weiterzugeben.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-4">
+                    <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
+                    <div>
+                      <h4 class="font-bold text-gray-900">Wenn Unterlagen fehlen</h4>
+                      <p class="text-gray-600 text-sm mt-1">
+                        Wenn keine Auswertungen sichtbar sind oder Sie eine bestimmte Unterlage nicht finden, senden Sie bitte einen Screenshot an unser Büro, damit wir die Bereitstellung und Rechte prüfen können.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-8 p-5 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-yellow-900">
+                  <strong>Hinweis:</strong> Wenn eine Auswertung nicht sichtbar ist, wurde sie möglicherweise noch nicht bereitgestellt oder Ihr Zugang hat noch nicht die passenden Rechte.
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-gray-100">
+              <h4 class="text-xl font-bold text-blue-900 mb-5">
+                Allgemeine Hinweise
+              </h4>
+
+              <div class="bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Kurze Unterscheidung</h5>
+                <ul class="space-y-3 text-sm text-gray-600">
+                  <li class="flex gap-3"><i class="fas fa-file-alt text-datev mt-1"></i><span><strong>Belege:</strong> Rechnungen, Kassenbons, Verträge oder Unterlagen, die Mandanten hochladen.</span></li>
+                  <li class="flex gap-3"><i class="fas fa-chart-line text-datev mt-1"></i><span><strong>Auswertungen:</strong> Berichte oder Dokumente, die unser Büro für Mandanten bereitstellt.</span></li>
+                </ul>
+              </div>
+
+              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Häufige Unterlagen</h5>
+                <ul class="space-y-3 text-sm text-gray-600">
+                  <li><strong>BWA:</strong> Betriebswirtschaftliche Auswertung.</li>
+                  <li><strong>SuSa:</strong> Summen- und Saldenliste.</li>
+                  <li><strong>OPOS:</strong> Liste offener Posten.</li>
+                </ul>
+              </div>
+
+              <div class="mt-8 bg-white rounded-xl p-5 shadow-sm">
+                <h5 class="font-bold text-gray-900 mb-3">Bereich Anwendungen</h5>
+
+                <p class="text-sm text-gray-600">
+                  Wenn der benötigte Bereich auf der Startseite nicht sichtbar ist, können Mandanten oben rechts auf <strong>Anwendungen</strong> klicken, um die DATEV-Anwendungen zu öffnen.
+                </p>
+
+                <ul class="mt-4 space-y-3 text-sm text-gray-600">
+                  <li><strong>Belege:</strong> Zum Hochladen von Belegen und zum Öffnen der Belegübersicht.</li>
+                  <li><strong>Auswertungen Rechnungswesen:</strong> Zum Anzeigen von Buchhaltungsberichten wie BWA, SuSa oder OPOS, wenn diese bereitgestellt wurden.</li>
+                </ul>
+
+                <div class="mt-5 p-4 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-yellow-900">
+                  <strong>Hinweis:</strong>
+                  Andere Anwendungen wie <strong>Kassenbuch</strong>, <strong>Stammdaten</strong>, <strong>Auftragswesen</strong> oder DATEV-Einstellungen sollten nur nach vorheriger Absprache mit unserem Büro genutzt werden. Bitte ändern Sie keine Firmendaten, Rechte oder Einstellungen ohne Rücksprache.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-14 md:py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">
+        Häufige Fragen
+      </h2>
+
+      <div class="space-y-4">
+        <div class="faq-item border rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition">
+          <div class="flex justify-between items-center gap-4 font-bold text-blue-900">
+            <span>Ist DATEV Unternehmen online sicher?</span>
+            <i class="fas fa-plus text-gray-400 text-sm"></i>
+          </div>
+          <p class="mt-3 text-gray-600 hidden">
+            DATEV nutzt sichere Anmeldeverfahren wie SmartLogin oder SmartCard. Geben Sie PIN, Gerät oder Zugangsdaten niemals an unbefugte Personen weiter.
+          </p>
+        </div>
+
+        <div class="faq-item border rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition">
+          <div class="flex justify-between items-center gap-4 font-bold text-blue-900">
+            <span>Kann ich Belege aus früheren Jahren ansehen?</span>
+            <i class="fas fa-plus text-gray-400 text-sm"></i>
+          </div>
+          <p class="mt-3 text-gray-600 hidden">
+            Je nach Zugriffsrechten und Aufbewahrungseinstellungen können hochgeladene Belege später wieder eingesehen werden. Originalbelege sollten dennoch nach den geltenden steuerlichen und buchhalterischen Vorschriften aufbewahrt werden.
+          </p>
+        </div>
+
+        <div class="faq-item border rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition">
+          <div class="flex justify-between items-center gap-4 font-bold text-blue-900">
+            <span>Was tun, wenn ich mein Smartphone mit SmartLogin verliere?</span>
+            <i class="fas fa-plus text-gray-400 text-sm"></i>
+          </div>
+          <p class="mt-3 text-gray-600 hidden">
+            Kontaktieren Sie sofort Buchhaltungsservice Vu Ngoc Chan. Wir prüfen die Zugriffsrechte und unterstützen Sie bei den nächsten Schritten zur Sperrung oder Neueinrichtung des Zugangs.
+          </p>
+        </div>
+
+        <div class="faq-item border rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition">
+          <div class="flex justify-between items-center gap-4 font-bold text-blue-900">
+            <span>Wann sollte ich Belege hochladen?</span>
+            <i class="fas fa-plus text-gray-400 text-sm"></i>
+          </div>
+          <p class="mt-3 text-gray-600 hidden">
+            Am besten laden Sie Belege zeitnah nach Erhalt hoch. Wenn Belege bis zum Monatsende gesammelt werden, können Rückfragen und die Bearbeitung länger dauern.
+          </p>
+        </div>
+
+        <div class="faq-item border rounded-xl p-4 cursor-pointer hover:bg-gray-50 transition">
+          <div class="flex justify-between items-center gap-4 font-bold text-blue-900">
+            <span>Muss ich Belege zusätzlich per E-Mail senden?</span>
+            <i class="fas fa-plus text-gray-400 text-sm"></i>
+          </div>
+          <p class="mt-3 text-gray-600 hidden">
+            Wenn ein Beleg erfolgreich in DATEV Unternehmen online hochgeladen wurde, muss er normalerweise nicht zusätzlich per E-Mail gesendet werden. Doppelte Übermittlungen können die Bearbeitung erschweren.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notice Section -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm text-sm text-gray-600 leading-relaxed">
+        <p>
+          <strong class="text-blue-900">Hinweis:</strong> Die Informationen auf dieser Seite dienen der Unterstützung von Mandanten bei der Vorbereitung von Belegen und der Nutzung von DATEV Unternehmen online. Sie ersetzen keine steuerliche oder rechtliche Beratung.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-14 md:py-20 hero-gradient text-white">
+    <div class="max-w-7xl mx-auto px-4">
+
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white leading-tight">
+          <span class="inline-block">Buchhaltungsservice</span>
+          <span class="inline-block whitespace-nowrap text-datev">Vu Ngoc Chan</span>
+        </h2>
+
+        <p class="text-xl opacity-90">
+          Wir unterstützen Sie gerne in Deutschland
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+        <a href="tel:+493054801088" class="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:bg-white/15 transition">
+          <i class="fas fa-phone-alt text-2xl mb-4 text-datev"></i>
+          <h4 class="text-lg font-bold mb-2">Telefon</h4>
+          <p class="text-xl font-bold">+49 30 548 010 88</p>
+        </a>
+
+        <a href="mailto:info@vu-consult.de" class="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:bg-white/15 transition">
+          <i class="fas fa-envelope text-2xl mb-4 text-datev"></i>
+          <h4 class="text-lg font-bold mb-2">E-Mail</h4>
+          <p class="text-lg font-bold break-all">info@vu-consult.de</p>
+        </a>
+
+        <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/20">
+          <i class="fas fa-map-marked-alt text-2xl mb-4 text-datev"></i>
+          <h4 class="text-lg font-bold mb-2">Adresse</h4>
+          <p class="text-base">Herzbergstr. 33/34</p>
+          <p class="text-base">10365 Berlin</p>
+        </div>
+
+        <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/20">
+          <i class="fas fa-clock text-2xl mb-4 text-datev"></i>
+          <h4 class="text-lg font-bold mb-2">Öffnungszeiten</h4>
+          <p class="text-base">Montag - Freitag</p>
+          <p class="text-lg font-bold text-white">09:00 - 17:00</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12 px-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+
+      <div>
+        <div class="text-2xl font-bold text-white mb-2 leading-tight">
+          <span class="inline-block">Buchhaltungsservice</span>
+          <span class="inline-block whitespace-nowrap text-datev">Vu Ngoc Chan</span>
+        </div>
+
+        <p class="text-sm">
+          Moderner und professioneller Buchhaltungsservice für Unternehmen in Deutschland.
+        </p>
+
+        <div class="mt-4 flex items-center space-x-2 text-sm text-white">
+          <i class="fas fa-envelope text-datev"></i>
+          <span>info@vu-consult.de</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-16">
+
+        <div>
+          <h5 class="text-white font-bold mb-4">Menü</h5>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index-de.html#home" class="hover:text-datev transition">Startseite</a></li>
+            <li><a href="index-de.html#services" class="hover:text-datev transition">Leistungen</a></li>
+            <li><a href="#intro" class="hover:text-datev transition">DATEV UO</a></li>
+            <li><a href="#contact" class="hover:text-datev transition">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-white font-bold mb-4">Links</h5>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="https://www.datev.de" target="_blank" rel="noopener noreferrer" class="hover:text-datev transition">
+                DATEV Germany
+              </a>
+            </li>
+            <li><a href="impressum.html" class="hover:text-datev transition">Impressum</a></li>
+            <li><a href="datenschutz.html" class="hover:text-datev transition">Datenschutz</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-gray-800 text-center text-xs">
+      <p>
+        &copy; 2026 Buchhaltungsservice Vu Ngoc Chan. Informationsseite für Mandanten unseres Büros.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    document.querySelectorAll('.guide-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const selectedGuide = card.getAttribute('data-guide');
+
+        document.querySelectorAll('.guide-card').forEach(el => {
+          el.classList.remove('active', 'border-datev');
+          el.classList.add('border-gray-200');
+        });
+
+        card.classList.add('active', 'border-datev');
+        card.classList.remove('border-gray-200');
+
+        document.querySelectorAll('.guide-detail').forEach(detail => {
+          detail.classList.add('hidden');
+        });
+
+        const selectedContent = document.querySelector(`.guide-detail[data-content="${selectedGuide}"]`);
+        if (selectedContent) {
+          selectedContent.classList.remove('hidden');
+        }
+      });
+    });
+
+    document.querySelectorAll('.upload-mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.getAttribute('data-upload-mode');
+
+        document.querySelectorAll('.upload-mode-btn').forEach(el => {
+          el.classList.remove('active');
+        });
+        btn.classList.add('active');
+
+        document.querySelectorAll('.upload-mode-content').forEach(el => {
+          el.classList.add('hidden');
+        });
+
+        const target = document.querySelector(`.upload-mode-content[data-upload-content="${mode}"]`);
+        if (target) {
+          target.classList.remove('hidden');
+        }
+      });
+    });
+
+    document.querySelectorAll('.auswertung-mode-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.getAttribute('data-auswertung-mode');
+
+        document.querySelectorAll('.auswertung-mode-btn').forEach(el => {
+          el.classList.remove('active');
+        });
+        btn.classList.add('active');
+
+        document.querySelectorAll('.auswertung-mode-content').forEach(el => {
+          el.classList.add('hidden');
+        });
+
+        const target = document.querySelector(`.auswertung-mode-content[data-auswertung-content="${mode}"]`);
+        if (target) {
+          target.classList.remove('hidden');
+        }
+      });
+    });
+
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const answer = item.querySelector('p');
+        const icon = item.querySelector('i');
+        const isOpen = !answer.classList.contains('hidden');
+
+        document.querySelectorAll('.faq-item p').forEach(el => el.classList.add('hidden'));
+        document.querySelectorAll('.faq-item i').forEach(el => {
+          el.classList.remove('fa-minus');
+          el.classList.add('fa-plus');
+        });
+
+        if (!isOpen) {
+          answer.classList.remove('hidden');
+          icon.classList.remove('fa-plus');
+          icon.classList.add('fa-minus');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
