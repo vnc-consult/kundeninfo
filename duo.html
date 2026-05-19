@@ -111,6 +111,78 @@
       color: white;
       border-color: #64b42d;
     }
+
+
+    /* Mobile hardening v2: avoid any horizontal clipping in guide sections */
+    @media (max-width: 640px) {
+      body {
+        min-width: 0;
+      }
+
+      .card-hover:hover,
+      .guide-card.active {
+        transform: none;
+      }
+
+      #guide-content {
+        overflow: visible;
+      }
+
+      .guide-detail,
+      .guide-detail * {
+        min-width: 0;
+      }
+
+      .guide-detail .p-8,
+      .guide-detail .md\:p-10 {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+
+      .guide-detail .flex.items-center.mb-6,
+      .guide-detail .flex.items-start.mb-6 {
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+
+      .guide-detail .flex.items-center.mb-6 h3,
+      .guide-detail .flex.items-start.mb-6 h3 {
+        font-size: 1.35rem;
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+      }
+
+      .guide-detail .w-14.h-14 {
+        width: 3rem;
+        height: 3rem;
+      }
+
+      .guide-detail .upload-mode-btn,
+      .guide-detail .auswertung-mode-btn {
+        width: 100%;
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+        border-radius: 0.9rem;
+        line-height: 1.25;
+      }
+
+      .guide-detail .flex.flex-wrap.gap-3.mb-8 {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .guide-detail p,
+      .guide-detail li,
+      .guide-detail h4,
+      .guide-detail h5,
+      .guide-detail span,
+      .guide-detail strong {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+      }
+    }
+
   </style>
 </head>
 
@@ -338,14 +410,14 @@
         <div class="guide-detail" data-content="smartlogin">
           <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-0">
 
-            <div class="p-8 md:p-10">
-              <div class="flex items-center mb-6">
+            <div class="p-5 sm:p-8 md:p-10 min-w-0">
+              <div class="flex items-start sm:items-center mb-6 min-w-0">
                 <div class="w-14 h-14 rounded-full bg-red-100 text-red-500 flex items-center justify-center mr-4">
                   <i class="fas fa-mobile-alt text-2xl"></i>
                 </div>
                 <div>
                   <p class="text-sm font-semibold text-datev uppercase tracking-wide">Tài liệu 01</p>
-                  <h3 class="text-2xl md:text-3xl font-bold text-blue-900">
+                  <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-blue-900 mobile-safe-text leading-tight">
                     Thiết lập DATEV SmartLogin lần đầu
                   </h3>
                 </div>
@@ -474,7 +546,7 @@
               </div>
             </div>
 
-            <div class="bg-gray-50 p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-gray-100">
+            <div class="bg-gray-50 p-5 sm:p-8 md:p-10 min-w-0 border-t lg:border-t-0 lg:border-l border-gray-100">
               <h4 class="text-xl font-bold text-blue-900 mb-5">
                 Khách hàng cần chuẩn bị
               </h4>
@@ -545,14 +617,14 @@
         <!-- Upload Guide -->
         <div class="guide-detail hidden" data-content="upload">
           <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-0">
-            <div class="p-8 md:p-10">
-              <div class="flex items-center mb-6">
+            <div class="p-5 sm:p-8 md:p-10 min-w-0">
+              <div class="flex items-start sm:items-center mb-6 min-w-0">
                 <div class="w-14 h-14 rounded-full bg-blue-100 text-blue-500 flex items-center justify-center mr-4">
                   <i class="fas fa-cloud-upload-alt text-2xl"></i>
                 </div>
                 <div>
                   <p class="text-sm font-semibold text-datev uppercase tracking-wide">Tài liệu 02</p>
-                  <h3 class="text-2xl md:text-3xl font-bold text-blue-900">Tải chứng từ lên Datev UO</h3>
+                  <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-blue-900 mobile-safe-text leading-tight">Tải chứng từ lên Datev UO</h3>
                 </div>
               </div>
 
@@ -560,10 +632,10 @@
                 Bạn có thể gửi chứng từ lên DATEV theo 3 cách. Hãy chọn đúng cách phù hợp để việc xử lý kế toán nhanh hơn và hạn chế gửi trùng.
               </p>
 
-              <div class="flex flex-wrap gap-3 mb-8">
-                <button type="button" data-upload-mode="phone" class="upload-mode-btn active px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">Upload bằng điện thoại</button>
-                <button type="button" data-upload-mode="desktop" class="upload-mode-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">Upload bằng máy tính</button>
-                <button type="button" data-upload-mode="mail" class="upload-mode-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">Upload Mail</button>
+              <div class="grid grid-cols-1 sm:flex sm:flex-wrap gap-3 mb-8">
+                <button type="button" data-upload-mode="phone" class="upload-mode-btn active w-full sm:w-auto whitespace-normal px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">Upload bằng điện thoại</button>
+                <button type="button" data-upload-mode="desktop" class="upload-mode-btn w-full sm:w-auto whitespace-normal px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">Upload bằng máy tính</button>
+                <button type="button" data-upload-mode="mail" class="upload-mode-btn w-full sm:w-auto whitespace-normal px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">Upload Mail</button>
               </div>
 
               <div class="upload-mode-content" data-upload-content="phone">
@@ -986,7 +1058,7 @@
               </div>
             </div>
 
-            <div class="bg-gray-50 p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-gray-100">
+            <div class="bg-gray-50 p-5 sm:p-8 md:p-10 min-w-0 border-t lg:border-t-0 lg:border-l border-gray-100">
               <h4 class="text-xl font-bold text-blue-900 mb-5">Lưu ý chung</h4>
 
               <div class="space-y-5 text-sm text-gray-600">
@@ -1140,14 +1212,14 @@
         <div class="guide-detail hidden" data-content="bank">
           <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-0">
 
-            <div class="p-8 md:p-10">
-              <div class="flex items-center mb-6">
+            <div class="p-5 sm:p-8 md:p-10 min-w-0">
+              <div class="flex items-start sm:items-center mb-6 min-w-0">
                 <div class="w-14 h-14 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-4">
                   <i class="fas fa-university text-2xl"></i>
                 </div>
                 <div>
                   <p class="text-sm font-semibold text-datev uppercase tracking-wide">Tài liệu 03</p>
-                  <h3 class="text-2xl md:text-3xl font-bold text-blue-900">
+                  <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-blue-900 mobile-safe-text leading-tight">
                     Kết nối ngân hàng trong DATEV
                   </h3>
                 </div>
@@ -1206,7 +1278,7 @@
               </div>
             </div>
 
-            <div class="bg-gray-50 p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-gray-100">
+            <div class="bg-gray-50 p-5 sm:p-8 md:p-10 min-w-0 border-t lg:border-t-0 lg:border-l border-gray-100">
               <h4 class="text-xl font-bold text-blue-900 mb-5">
                 Khách hàng cần chuẩn bị
               </h4>
@@ -1279,14 +1351,14 @@
         <div class="guide-detail hidden" data-content="auswertung">
           <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-0">
 
-            <div class="p-8 md:p-10">
-              <div class="flex items-center mb-6">
+            <div class="p-5 sm:p-8 md:p-10 min-w-0">
+              <div class="flex items-start sm:items-center mb-6 min-w-0">
                 <div class="w-14 h-14 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center mr-4">
                   <i class="fas fa-chart-line text-2xl"></i>
                 </div>
                 <div>
                   <p class="text-sm font-semibold text-datev uppercase tracking-wide">Tài liệu 04</p>
-                  <h3 class="text-2xl md:text-3xl font-bold text-blue-900">
+                  <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-blue-900 mobile-safe-text leading-tight">
                     Kiểm tra Belege & xem Auswertungen
                   </h3>
                 </div>
@@ -1296,11 +1368,11 @@
                 Trong DATEV Unternehmen online, khách hàng có thể kiểm tra lại chứng từ đã gửi và xem các tài liệu do văn phòng cung cấp. Phần này được chia thành 2 mục để khách hàng dễ thao tác hơn.
               </p>
 
-              <div class="flex flex-wrap gap-3 mb-8">
-                <button type="button" data-auswertung-mode="belege" class="auswertung-mode-btn active px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">
+              <div class="grid grid-cols-1 sm:flex sm:flex-wrap gap-3 mb-8">
+                <button type="button" data-auswertung-mode="belege" class="auswertung-mode-btn active w-full sm:w-auto whitespace-normal px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">
                   Kiểm tra Belege
                 </button>
-                <button type="button" data-auswertung-mode="reports" class="auswertung-mode-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">
+                <button type="button" data-auswertung-mode="reports" class="auswertung-mode-btn w-full sm:w-auto whitespace-normal px-4 py-2 rounded-full border border-gray-200 text-sm font-semibold transition">
                   Xem Auswertungen
                 </button>
               </div>
@@ -1412,7 +1484,7 @@
               </div>
             </div>
 
-            <div class="bg-gray-50 p-8 md:p-10 border-t lg:border-t-0 lg:border-l border-gray-100">
+            <div class="bg-gray-50 p-5 sm:p-8 md:p-10 min-w-0 border-t lg:border-t-0 lg:border-l border-gray-100">
               <h4 class="text-xl font-bold text-blue-900 mb-5">
                 Lưu ý chung
               </h4>

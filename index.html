@@ -93,6 +93,14 @@
     .card-hover:hover {
       transform: translateY(-5px);
     }
+
+
+    /* Mobile hardening v2 */
+    @media (max-width: 640px) {
+      .card-hover:hover { transform: none; }
+      h1, h2, h3, h4, p, a, span, li, strong { overflow-wrap: anywhere; }
+    }
+
   </style>
 </head>
 
