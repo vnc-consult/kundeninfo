@@ -139,12 +139,14 @@
     }
 
     .guide-image-viewer {
+      --guide-viewer-width: 380px;
+      --guide-viewer-body-height: 68vh;
       display: none;
       position: fixed;
-      left: calc(50% - 1.5rem);
+      left: min(calc(100vw - var(--guide-viewer-width) - 1rem), calc(50% + 3rem));
       right: auto;
       top: 6.25rem;
-      width: min(380px, calc(50vw - 1.5rem));
+      width: min(var(--guide-viewer-width), calc(50vw - 4rem));
       max-height: calc(100vh - 7.5rem);
       z-index: 70;
       background: #ffffff;
@@ -152,6 +154,26 @@
       border-radius: 1rem;
       box-shadow: 0 25px 60px rgba(15, 23, 42, 0.24);
       overflow: hidden;
+    }
+
+    .guide-image-viewer.size-small {
+      --guide-viewer-width: 320px;
+      --guide-viewer-body-height: 58vh;
+    }
+
+    .guide-image-viewer.size-medium {
+      --guide-viewer-width: 380px;
+      --guide-viewer-body-height: 68vh;
+    }
+
+    .guide-image-viewer.size-large {
+      --guide-viewer-width: 430px;
+      --guide-viewer-body-height: 72vh;
+    }
+
+    .guide-image-viewer.size-wide {
+      --guide-viewer-width: 520px;
+      --guide-viewer-body-height: 58vh;
     }
 
     .guide-image-viewer.open {
@@ -194,13 +216,18 @@
     }
 
     .guide-image-viewer-body {
+      height: min(var(--guide-viewer-body-height), calc(100vh - 13rem));
       padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: #ffffff;
     }
 
     .guide-image-viewer img {
+      display: block;
       width: 100%;
-      max-height: calc(100vh - 13rem);
+      height: 100%;
       object-fit: contain;
       border-radius: 0.85rem;
       border: 1px solid rgba(229, 231, 235, 1);
@@ -208,7 +235,11 @@
     }
 
     @media (max-width: 1023px) {
-      .guide-image-viewer {
+      .guide-image-viewer,
+      .guide-image-viewer.size-small,
+      .guide-image-viewer.size-medium,
+      .guide-image-viewer.size-large,
+      .guide-image-viewer.size-wide {
         inset: 0;
         width: 100vw;
         height: 100vh;
@@ -241,16 +272,13 @@
       .guide-image-viewer-body {
         height: calc(100vh - 4rem);
         padding: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         background: transparent;
       }
 
       .guide-image-viewer img {
-        max-height: calc(100vh - 6.5rem);
-        width: auto;
-        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
         border: none;
         background: transparent;
       }
@@ -634,6 +662,7 @@
                         class="guide-image-btn"
                         data-image="assets/images/duo/duo_1.4.jpeg"
                         data-title="Quét QR-Code trên thư đăng ký"
+                        data-size="large"
                         aria-label="Xem hình minh họa: Quét QR-Code trên thư đăng ký"
                       >
                         <i class="fas fa-image"></i>
@@ -728,6 +757,7 @@
                         class="guide-image-btn"
                         data-image="assets/images/duo/duo_1.9.jpeg"
                         data-title="Thử đăng nhập vào DATEV Unternehmen online"
+                        data-size="wide"
                         aria-label="Xem hình minh họa: Thử đăng nhập vào DATEV Unternehmen online"
                       >
                         <i class="fas fa-image"></i>
@@ -754,8 +784,9 @@
                       <button
                         type="button"
                         class="guide-image-btn"
-                        data-image="assets/images/duo/duo_1.10.PNG"
+                        data-image="assets/images/duo/duo_1.10.jpeg"
                         data-title="Kiểm tra quyền truy cập sau khi đăng nhập"
+                        data-size="wide"
                         aria-label="Xem hình minh họa: Kiểm tra quyền truy cập sau khi đăng nhập"
                       >
                         <i class="fas fa-image"></i>
@@ -1192,6 +1223,7 @@
                         class="guide-image-btn"
                         data-image="assets/images/duo/duo_2.2.6.jpeg"
                         data-title="Đăng nhập bằng SmartLogin"
+                        data-size="wide"
                         aria-label="Xem hình minh họa: Đăng nhập bằng SmartLogin"
                       >
                         <i class="fas fa-image"></i>
@@ -1213,6 +1245,7 @@
                         class="guide-image-btn"
                         data-image="assets/images/duo/duo_2.2.7.jpeg"
                         data-title="Chọn Belege hochladen và chọn file"
+                        data-size="wide"
                         aria-label="Xem hình minh họa: Chọn Belege hochladen và chọn file"
                       >
                         <i class="fas fa-image"></i>
@@ -2168,6 +2201,16 @@
     const guideImageImg = document.getElementById('guide-image-img');
     const guideImageTitle = document.getElementById('guide-image-title');
     const guideImageClose = document.getElementById('guide-image-close');
+    const guideImageSizes = ['small', 'medium', 'large', 'wide'];
+
+    function setGuideImageSize(size) {
+      if (!guideImageViewer) return;
+      guideImageSizes.forEach(item => {
+        guideImageViewer.classList.remove(`size-${item}`);
+      });
+      const safeSize = guideImageSizes.includes(size) ? size : 'medium';
+      guideImageViewer.classList.add(`size-${safeSize}`);
+    }
 
     function closeGuideImageViewer() {
       if (!guideImageViewer || !guideImageImg) return;
@@ -2182,9 +2225,11 @@
         event.stopPropagation();
         const imageSrc = btn.getAttribute('data-image');
         const imageTitle = btn.getAttribute('data-title') || 'Hình minh họa';
+        const imageSize = btn.getAttribute('data-size') || 'medium';
 
         if (!guideImageViewer || !guideImageImg || !imageSrc) return;
 
+        setGuideImageSize(imageSize);
         guideImageImg.src = imageSrc;
         guideImageImg.alt = imageTitle;
         if (guideImageTitle) {
