@@ -113,6 +113,148 @@
     }
 
 
+
+
+    /* Guide image viewer: desktop side panel, mobile full screen */
+    .guide-image-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 9999px;
+      margin-left: 0.35rem;
+      color: #64b42d;
+      background-color: rgba(100, 180, 45, 0.10);
+      border: 1px solid rgba(100, 180, 45, 0.25);
+      transition: all 0.2s ease;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    .guide-image-btn:hover {
+      background-color: rgba(100, 180, 45, 0.18);
+      color: #3f8f1f;
+      transform: translateY(-1px);
+    }
+
+    .guide-image-viewer {
+      display: none;
+      position: fixed;
+      right: 1.25rem;
+      top: 6.25rem;
+      width: min(430px, calc(100vw - 2.5rem));
+      max-height: calc(100vh - 7.5rem);
+      z-index: 70;
+      background: #ffffff;
+      border: 1px solid rgba(229, 231, 235, 1);
+      border-radius: 1rem;
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.24);
+      overflow: hidden;
+    }
+
+    .guide-image-viewer.open {
+      display: block;
+    }
+
+    .guide-image-viewer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid rgba(229, 231, 235, 1);
+      background: #f8fafc;
+    }
+
+    .guide-image-viewer-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0f3b66;
+      line-height: 1.25;
+    }
+
+    .guide-image-close {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #475569;
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 1);
+      flex-shrink: 0;
+    }
+
+    .guide-image-close:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+
+    .guide-image-viewer-body {
+      padding: 1rem;
+      background: #ffffff;
+    }
+
+    .guide-image-viewer img {
+      width: 100%;
+      max-height: calc(100vh - 13rem);
+      object-fit: contain;
+      border-radius: 0.85rem;
+      border: 1px solid rgba(229, 231, 235, 1);
+      background: #ffffff;
+    }
+
+    @media (max-width: 1023px) {
+      .guide-image-viewer {
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        max-height: none;
+        border-radius: 0;
+        border: none;
+        background: rgba(15, 23, 42, 0.96);
+      }
+
+      .guide-image-viewer-header {
+        background: rgba(15, 23, 42, 0.96);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .guide-image-viewer-title {
+        color: #ffffff;
+      }
+
+      .guide-image-close {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.25);
+      }
+
+      .guide-image-close:hover {
+        background: rgba(255, 255, 255, 0.20);
+        color: #ffffff;
+      }
+
+      .guide-image-viewer-body {
+        height: calc(100vh - 4rem);
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+      }
+
+      .guide-image-viewer img {
+        max-height: calc(100vh - 6.5rem);
+        width: auto;
+        max-width: 100%;
+        border: none;
+        background: transparent;
+      }
+    }
+
     /* Mobile hardening v2: avoid any horizontal clipping in guide sections */
     @media (max-width: 640px) {
       body {
@@ -442,7 +584,18 @@
                 <div class="flex gap-4">
                   <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
                   <div>
-                    <h4 class="font-bold text-gray-900">Tải ứng dụng DATEV SmartLogin</h4>
+                    <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Tải ứng dụng DATEV SmartLogin</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_1.2.jpeg"
+                        data-title="Tải ứng dụng DATEV SmartLogin"
+                        aria-label="Xem hình minh họa: Tải ứng dụng DATEV SmartLogin"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                     <p class="text-gray-600 text-sm mt-1">
                       Mở App Store trên iPhone hoặc Google Play trên Android. Tìm ứng dụng <strong>DATEV SmartLogin</strong> và cài đặt. Nên kiểm tra đúng tên ứng dụng và nhà cung cấp là DATEV trước khi tải.
                     </p>
@@ -452,7 +605,18 @@
                 <div class="flex gap-4">
                   <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
                   <div>
-                    <h4 class="font-bold text-gray-900">Bấm “Jetzt registrieren”</h4>
+                    <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Bấm “Jetzt registrieren”</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_1.3.jpeg"
+                        data-title="Bấm “Jetzt registrieren”"
+                        aria-label="Xem hình minh họa: Bấm “Jetzt registrieren”"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                     <p class="text-gray-600 text-sm mt-1">
                       Sau khi cài đặt xong, mở app DATEV SmartLogin trên điện thoại, bấm <strong>Jetzt registrieren</strong>. Nếu app hiển thị Sicherheitshinweis hoặc thông báo bảo mật, hãy đọc ngắn gọn rồi bấm <strong>Weiter</strong> hoặc nút tiếp tục tương ứng.
                     </p>
@@ -462,7 +626,18 @@
                 <div class="flex gap-4">
                   <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
                   <div>
-                    <h4 class="font-bold text-gray-900">Quét QR-Code trên thư đăng ký</h4>
+                    <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Quét QR-Code trên thư đăng ký</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_1.4.jpeg"
+                        data-title="Quét QR-Code trên thư đăng ký"
+                        aria-label="Xem hình minh họa: Quét QR-Code trên thư đăng ký"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                     <p class="text-gray-600 text-sm mt-1">
                       Mở thư đăng ký DATEV/Registrierungsbrief và quét QR-Code bằng app. Khi quét, để giấy trên mặt phẳng, đủ ánh sáng và giữ điện thoại ổn định để mã QR nằm rõ trong khung camera.
                     </p>
@@ -482,7 +657,18 @@
                 <div class="flex gap-4">
                   <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">6</div>
                   <div>
-                    <h4 class="font-bold text-gray-900">Tạo mật khẩu hoặc PIN cho SmartLogin</h4>
+                    <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Tạo mật khẩu hoặc PIN cho SmartLogin</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_1.6.jpeg"
+                        data-title="Tạo mật khẩu hoặc PIN cho SmartLogin"
+                        aria-label="Xem hình minh họa: Tạo mật khẩu hoặc PIN cho SmartLogin"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                     <p class="text-gray-600 text-sm mt-1">
                       App sẽ yêu cầu tạo mật khẩu/PIN theo hướng dẫn. Hãy chọn mật khẩu đủ an toàn và dễ nhớ với bạn. Không gửi mật khẩu, PIN, ảnh QR-Code hoặc mã đăng ký cho người khác qua WhatsApp, email hoặc tin nhắn.
                     </p>
@@ -492,7 +678,18 @@
                 <div class="flex gap-4">
                   <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">7</div>
                   <div>
-                    <h4 class="font-bold text-gray-900">Xác nhận email kích hoạt nếu được yêu cầu</h4>
+                    <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Xác nhận email kích hoạt nếu được yêu cầu</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_1.7.jpeg"
+                        data-title="Xác nhận email kích hoạt nếu được yêu cầu"
+                        aria-label="Xem hình minh họa: Xác nhận email kích hoạt nếu được yêu cầu"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                     <p class="text-gray-600 text-sm mt-1">
                       Sau khi đăng ký trong app, DATEV có thể gửi email xác nhận đến địa chỉ đã đăng ký. Mở email đó và bấm vào link kích hoạt/Aktivierungslink. Nếu không thấy email, hãy kiểm tra Spam/Junk hoặc hỏi văn phòng kiểm tra lại email đã đăng ký.
                     </p>
@@ -502,7 +699,18 @@
                 <div class="flex gap-4">
                   <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">8</div>
                   <div>
-                    <h4 class="font-bold text-gray-900">Kiểm tra SmartLogin đã sẵn sàng</h4>
+                    <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Kiểm tra SmartLogin đã sẵn sàng</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_1.8.jpeg"
+                        data-title="Kiểm tra SmartLogin đã sẵn sàng"
+                        aria-label="Xem hình minh họa: Kiểm tra SmartLogin đã sẵn sàng"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                     <p class="text-gray-600 text-sm mt-1">
                       Sau khi kích hoạt, mở lại app DATEV SmartLogin. Nếu app hiển thị trạng thái sẵn sàng hoặc tài khoản SmartLogin đã được đăng ký, bạn có thể dùng app này để xác nhận đăng nhập vào DATEV Unternehmen online.
                     </p>
@@ -512,7 +720,18 @@
                 <div class="flex gap-4">
                   <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">9</div>
                   <div>
-                    <h4 class="font-bold text-gray-900">Thử đăng nhập vào DATEV Unternehmen online</h4>
+                    <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Thử đăng nhập vào DATEV Unternehmen online</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_1.9.jpeg"
+                        data-title="Thử đăng nhập vào DATEV Unternehmen online"
+                        aria-label="Xem hình minh họa: Thử đăng nhập vào DATEV Unternehmen online"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                     <p class="text-gray-600 text-sm mt-1">
                       Trên máy tính hoặc điện thoại,
                       <a
@@ -531,7 +750,18 @@
                 <div class="flex gap-4">
                   <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">10</div>
                   <div>
-                    <h4 class="font-bold text-gray-900">Kiểm tra quyền truy cập sau khi đăng nhập</h4>
+                    <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Kiểm tra quyền truy cập sau khi đăng nhập</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_1.10.PNG"
+                        data-title="Kiểm tra quyền truy cập sau khi đăng nhập"
+                        aria-label="Xem hình minh họa: Kiểm tra quyền truy cập sau khi đăng nhập"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                     <p class="text-gray-600 text-sm mt-1">
                       Sau khi đăng nhập thành công, kiểm tra xem bạn có nhìn thấy đúng công ty và các mục cần dùng như Belege, Upload hoặc Auswertungen hay không. Nếu không thấy mục cần dùng, hãy chụp màn hình và gửi cho văn phòng để kiểm tra quyền truy cập.
                     </p>
@@ -671,7 +901,18 @@
                   <div class="flex gap-4">
                     <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">2</div>
                     <div>
-                      <h4 class="font-bold text-gray-900">Tải và mở app DATEV Upload mobil</h4>
+                      <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Tải và mở app DATEV Upload mobil</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_2.1.2.jpeg"
+                        data-title="Tải và mở app DATEV Upload mobil"
+                        aria-label="Xem hình minh họa: Tải và mở app DATEV Upload mobil"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                       <p class="text-gray-600 text-sm mt-1">
                         Nếu chưa có app, hãy tải ứng dụng <strong>DATEV Upload mobil</strong> trên App Store hoặc Google Play.
                         Sau khi cài đặt xong, mở app DATEV Upload mobil trên điện thoại.
@@ -683,7 +924,18 @@
                   <div class="flex gap-4">
                     <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">3</div>
                     <div>
-                      <h4 class="font-bold text-gray-900">Thêm chứng từ vào app</h4>
+                      <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Thêm chứng từ vào app</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_2.1.3.jpeg"
+                        data-title="Thêm chứng từ vào app"
+                        aria-label="Xem hình minh họa: Thêm chứng từ vào app"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                       <p class="text-gray-600 text-sm mt-1">
                         Trong app DATEV Upload mobil, bấm dấu “+”, “Beleg hinzufügen”, “Foto aufnehmen” hoặc nút tương tự để thêm chứng từ mới. Khách hàng có thể chụp trực tiếp trong app hoặc chọn ảnh/file đã có sẵn trong điện thoại.
                       </p>
@@ -699,7 +951,18 @@
                   <div class="flex gap-4">
                     <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">4</div>
                     <div>
-                      <h4 class="font-bold text-gray-900">Chụp đủ 4 góc của chứng từ</h4>
+                      <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Chụp đủ 4 góc của chứng từ</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_2.1.4.jpeg"
+                        data-title="Chụp đủ 4 góc của chứng từ"
+                        aria-label="Xem hình minh họa: Chụp đủ 4 góc của chứng từ"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                       <p class="text-gray-600 text-sm mt-1">
                         Khi chụp, giữ điện thoại thẳng, không nghiêng quá nhiều. Chứng từ cần nằm trọn trong khung hình, không bị cắt mất góc, ngày, số tiền, VAT/USt, tên nhà cung cấp hoặc số hóa đơn.
                       </p>
@@ -709,7 +972,18 @@
                   <div class="flex gap-4">
                     <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">5</div>
                     <div>
-                      <h4 class="font-bold text-gray-900">Kiểm tra ảnh sau khi chụp</h4>
+                      <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Kiểm tra ảnh sau khi chụp</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_2.1.5.jpeg"
+                        data-title="Kiểm tra ảnh sau khi chụp"
+                        aria-label="Xem hình minh họa: Kiểm tra ảnh sau khi chụp"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                       <p class="text-gray-600 text-sm mt-1">
                         Sau khi chụp, phóng to kiểm tra nhanh xem chữ có rõ không. Nếu ảnh bị mờ, bị bóng đèn, bị tối, bị cắt mất nội dung hoặc không đọc được số tiền, hãy xóa ảnh đó và chụp lại ngay.
                       </p>
@@ -739,7 +1013,18 @@
                   <div class="flex gap-4">
                     <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">8</div>
                     <div>
-                      <h4 class="font-bold text-gray-900">Đặt tên chứng từ đúng theo yêu cầu</h4>
+                      <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Đặt tên chứng từ đúng theo yêu cầu</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_2.1.8.jpeg"
+                        data-title="Đặt tên chứng từ đúng theo yêu cầu"
+                        aria-label="Xem hình minh họa: Đặt tên chứng từ đúng theo yêu cầu"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                       <p class="text-gray-600 text-sm mt-1">
                         Vui lòng đặt tên chứng từ ngắn gọn theo mẫu của văn phòng:<br>
                         <strong>YYYY-MM-DD_TenNganGon</strong><br>
@@ -756,7 +1041,18 @@
                   <div class="flex gap-4">
                     <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">9</div>
                     <div>
-                      <h4 class="font-bold text-gray-900">Chọn đúng loại chứng từ</h4>
+                      <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Chọn đúng loại chứng từ</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_2.1.9.jpeg"
+                        data-title="Chọn đúng loại chứng từ"
+                        aria-label="Xem hình minh họa: Chọn đúng loại chứng từ"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                       <p class="text-gray-600 text-sm mt-1">
                         Khi hệ thống yêu cầu, vui lòng chọn đúng Belegtyp theo quy định của văn phòng, ví dụ <strong>Bank</strong>, <strong>Bar</strong>, <strong>Kasse</strong>, <strong>Umsatz</strong>, <strong>Vertrag</strong> hoặc <strong>Sonstiges</strong>. Nếu không chắc nên chọn loại nào, hãy chọn <strong>Sonstiges</strong> hoặc hỏi văn phòng trước khi gửi nhiều chứng từ.
                       </p>
@@ -766,7 +1062,18 @@
                   <div class="flex gap-4">
                     <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">10</div>
                     <div>
-                      <h4 class="font-bold text-gray-900">Upload chứng từ</h4>
+                      <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Upload chứng từ</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_2.1.10.jpeg"
+                        data-title="Upload chứng từ"
+                        aria-label="Xem hình minh họa: Upload chứng từ"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                       <p class="text-gray-600 text-sm mt-1">
                         Sau khi kiểm tra ảnh và thông tin, bấm “Upload”, “Zum Upload”, biểu tượng đám mây hoặc nút gửi tương tự trong app. Nếu app hỏi xác nhận, hãy xác nhận để bắt đầu tải chứng từ lên DATEV.
                       </p>
@@ -879,7 +1186,18 @@
                   <div class="flex gap-4">
                     <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">6</div>
                     <div>
-                      <h4 class="font-bold text-gray-900">Đăng nhập bằng SmartLogin</h4>
+                      <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Đăng nhập bằng SmartLogin</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_2.2.6.jpeg"
+                        data-title="Đăng nhập bằng SmartLogin"
+                        aria-label="Xem hình minh họa: Đăng nhập bằng SmartLogin"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                       <p class="text-gray-600 text-sm mt-1">
                         Khi hệ thống yêu cầu đăng nhập, chọn <strong>DATEV SmartLogin</strong> hoặc phương thức truy cập đã được cấp. Trên màn hình máy tính có thể hiển thị mã QR hoặc yêu cầu xác nhận đăng nhập. Mở app DATEV SmartLogin trên điện thoại, quét mã QR hoặc xác nhận đăng nhập và nhập PIN nếu được yêu cầu.
                       </p>
@@ -889,7 +1207,18 @@
                   <div class="flex gap-4">
                     <div class="w-9 h-9 rounded-full bg-datev text-white flex items-center justify-center font-bold flex-shrink-0">7</div>
                     <div>
-                      <h4 class="font-bold text-gray-900">Chọn Belege hochladen và chọn file</h4>
+                      <h4 class="font-bold text-gray-900 flex items-center flex-wrap gap-1">
+                      <span>Chọn Belege hochladen và chọn file</span>
+                      <button
+                        type="button"
+                        class="guide-image-btn"
+                        data-image="assets/images/duo/duo_2.2.7.jpeg"
+                        data-title="Chọn Belege hochladen và chọn file"
+                        aria-label="Xem hình minh họa: Chọn Belege hochladen và chọn file"
+                      >
+                        <i class="fas fa-image"></i>
+                      </button>
+                    </h4>
                       <p class="text-gray-600 text-sm mt-1">
                         Trong DATEV Unternehmen online, chọn <strong>Belege hochladen</strong>. Chọn đúng loại chứng từ nếu hệ thống yêu cầu, ví dụ <strong>Bank</strong>, <strong>Bar</strong>, <strong>Kasse</strong>, <strong>Umsatz</strong>, <strong>Vertrag</strong> hoặc <strong>Sonstiges</strong>.
                         Sau đó bấm nút như <strong>Datei auswählen</strong>, <strong>Dateien hochladen</strong>, <strong>Beleg hochladen</strong> hoặc kéo file vào khu vực upload nếu hệ thống cho phép.
@@ -1741,6 +2070,20 @@
     </div>
   </footer>
 
+
+  <!-- Guide Image Viewer -->
+  <div id="guide-image-viewer" class="guide-image-viewer" aria-hidden="true">
+    <div class="guide-image-viewer-header">
+      <div id="guide-image-title" class="guide-image-viewer-title">Hình minh họa</div>
+      <button id="guide-image-close" type="button" class="guide-image-close" aria-label="Đóng hình minh họa">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="guide-image-viewer-body">
+      <img id="guide-image-img" src="" alt="" />
+    </div>
+  </div>
+
   <script>
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -1757,6 +2100,7 @@
 
     document.querySelectorAll('.guide-card').forEach(card => {
       card.addEventListener('click', () => {
+        closeGuideImageViewer();
         const selectedGuide = card.getAttribute('data-guide');
 
         document.querySelectorAll('.guide-card').forEach(el => {
@@ -1780,6 +2124,7 @@
 
     document.querySelectorAll('.upload-mode-btn').forEach(btn => {
       btn.addEventListener('click', () => {
+        closeGuideImageViewer();
         const mode = btn.getAttribute('data-upload-mode');
 
         document.querySelectorAll('.upload-mode-btn').forEach(el => {
@@ -1800,6 +2145,7 @@
 
     document.querySelectorAll('.auswertung-mode-btn').forEach(btn => {
       btn.addEventListener('click', () => {
+        closeGuideImageViewer();
         const mode = btn.getAttribute('data-auswertung-mode');
 
         document.querySelectorAll('.auswertung-mode-btn').forEach(el => {
@@ -1816,6 +2162,56 @@
           target.classList.remove('hidden');
         }
       });
+    });
+
+
+    const guideImageViewer = document.getElementById('guide-image-viewer');
+    const guideImageImg = document.getElementById('guide-image-img');
+    const guideImageTitle = document.getElementById('guide-image-title');
+    const guideImageClose = document.getElementById('guide-image-close');
+
+    function closeGuideImageViewer() {
+      if (!guideImageViewer || !guideImageImg) return;
+      guideImageViewer.classList.remove('open');
+      guideImageViewer.setAttribute('aria-hidden', 'true');
+      guideImageImg.removeAttribute('src');
+      guideImageImg.alt = '';
+    }
+
+    document.querySelectorAll('.guide-image-btn').forEach(btn => {
+      btn.addEventListener('click', event => {
+        event.stopPropagation();
+        const imageSrc = btn.getAttribute('data-image');
+        const imageTitle = btn.getAttribute('data-title') || 'Hình minh họa';
+
+        if (!guideImageViewer || !guideImageImg || !imageSrc) return;
+
+        guideImageImg.src = imageSrc;
+        guideImageImg.alt = imageTitle;
+        if (guideImageTitle) {
+          guideImageTitle.textContent = imageTitle;
+        }
+        guideImageViewer.classList.add('open');
+        guideImageViewer.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    if (guideImageClose) {
+      guideImageClose.addEventListener('click', closeGuideImageViewer);
+    }
+
+    if (guideImageViewer) {
+      guideImageViewer.addEventListener('click', event => {
+        if (event.target === guideImageViewer) {
+          closeGuideImageViewer();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        closeGuideImageViewer();
+      }
     });
 
     document.querySelectorAll('.faq-item').forEach(item => {
