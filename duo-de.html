@@ -1398,7 +1398,7 @@
                   </ul>
                 </div>
 
-                                <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
+                <div class="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
                   <h5 class="font-bold text-gray-900 mb-3">
                     Dateiname &amp; Belegtyp
                   </h5>
@@ -1420,22 +1420,21 @@
 
                     <!-- Bank -->
                     <div class="border-t border-gray-100 pt-3">
-                      <div class="flex flex-col sm:flex-row sm:items-start gap-3">
-                        <span class="w-max sm:min-w-[92px] text-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold flex-shrink-0">
-                          Bank
-                        </span>
+                      <div class="grid grid-cols-1 sm:grid-cols-[140px_minmax(0,1fr)] gap-3">
+                        <div>
+                          <span class="inline-flex w-full justify-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold">
+                            Bank
+                          </span>
+                        </div>
 
-                        <div class="min-w-0 flex-1">
+                        <div class="min-w-0">
                           <p class="text-sm text-gray-600">
                             Kontoauszüge und Kostenbelege, die über das Bankkonto bezahlt wurden.
                           </p>
+
                           <div class="mt-2 flex flex-wrap gap-2">
-                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">
-                              2026-01_Kontoauszug
-                            </code>
-                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">
-                              2026-01-15_Telekom
-                            </code>
+                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">2026-01_Kontoauszug</code>
+                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">2026-01-15_Telekom</code>
                           </div>
                         </div>
                       </div>
@@ -1443,22 +1442,21 @@
 
                     <!-- Kasse -->
                     <div class="border-t border-gray-100 pt-3">
-                      <div class="flex flex-col sm:flex-row sm:items-start gap-3">
-                        <span class="w-max sm:min-w-[92px] text-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold flex-shrink-0">
-                          Kasse
-                        </span>
+                      <div class="grid grid-cols-1 sm:grid-cols-[140px_minmax(0,1fr)] gap-3">
+                        <div>
+                          <span class="inline-flex w-full justify-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold">
+                            Kasse
+                          </span>
+                        </div>
 
-                        <div class="min-w-0 flex-1">
+                        <div class="min-w-0">
                           <p class="text-sm text-gray-600">
                             Kassenbuch sowie Kostenbelege, Rechnungen oder Quittungen, die bar bezahlt wurden.
                           </p>
+
                           <div class="mt-2 flex flex-wrap gap-2">
-                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">
-                              2026-01_Kassenbuch
-                            </code>
-                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">
-                              2026-01-20_Rewe
-                            </code>
+                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">2026-01_Kassenbuch</code>
+                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">2026-01-20_Rewe</code>
                           </div>
                         </div>
                       </div>
@@ -1466,19 +1464,20 @@
 
                     <!-- Rechnungsausgang -->
                     <div class="border-t border-gray-100 pt-3">
-                      <div class="flex flex-col sm:flex-row sm:items-start gap-3">
-                        <span class="w-max sm:min-w-[92px] text-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold flex-shrink-0">
-                          Rechnungsausgang
-                        </span>
+                      <div class="grid grid-cols-1 sm:grid-cols-[140px_minmax(0,1fr)] gap-3">
+                        <div>
+                          <span class="inline-flex w-full justify-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-[11px] font-bold leading-tight">
+                            Rechnungsausgang
+                          </span>
+                        </div>
 
-                        <div class="min-w-0 flex-1">
+                        <div class="min-w-0">
                           <p class="text-sm text-gray-600">
-                            Ausgangsrechnungen / Rechnungen, die das Unternehmen an Kunden ausstellt.
+                            Ausgangsrechnung, also eine Rechnung, die das Unternehmen an Kunden ausstellt.
                           </p>
+
                           <div class="mt-2 flex flex-wrap gap-2">
-                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">
-                              2026-01-15_Le Van A
-                            </code>
+                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">2026-01-15_Le Van A</code>
                           </div>
                         </div>
                       </div>
@@ -1486,12 +1485,14 @@
 
                     <!-- Umsatz -->
                     <div class="border-t border-gray-100 pt-3">
-                      <div class="flex flex-col sm:flex-row sm:items-start gap-3">
-                        <span class="w-max sm:min-w-[92px] text-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold flex-shrink-0">
-                          Umsatz
-                        </span>
+                      <div class="grid grid-cols-1 sm:grid-cols-[140px_minmax(0,1fr)] gap-3">
+                        <div>
+                          <span class="inline-flex w-full justify-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold">
+                            Umsatz
+                          </span>
+                        </div>
 
-                        <div class="min-w-0 flex-1">
+                        <div class="min-w-0">
                           <p class="text-sm text-gray-600">
                             Unterlagen, die mit Verkaufserlösen oder Umsätzen zusammenhängen.
                           </p>
@@ -1502,12 +1503,8 @@
                           </div>
 
                           <div class="mt-2 flex flex-wrap gap-2">
-                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">
-                              2026-01-31_ZBon
-                            </code>
-                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">
-                              2026-01_Flatpay
-                            </code>
+                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">2026-01-31_ZBon</code>
+                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">2026-01_Flatpay</code>
                           </div>
                         </div>
                       </div>
@@ -1515,22 +1512,21 @@
 
                     <!-- Vertrag -->
                     <div class="border-t border-gray-100 pt-3">
-                      <div class="flex flex-col sm:flex-row sm:items-start gap-3">
-                        <span class="w-max sm:min-w-[92px] text-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold flex-shrink-0">
-                          Vertrag
-                        </span>
+                      <div class="grid grid-cols-1 sm:grid-cols-[140px_minmax(0,1fr)] gap-3">
+                        <div>
+                          <span class="inline-flex w-full justify-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold">
+                            Vertrag
+                          </span>
+                        </div>
 
-                        <div class="min-w-0 flex-1">
+                        <div class="min-w-0">
                           <p class="text-sm text-gray-600">
                             Mietverträge, Leasingverträge, Versicherungen, Strom, Wasser oder andere langfristige Dienstleistungsverträge.
                           </p>
+
                           <div class="mt-2 flex flex-wrap gap-2">
-                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">
-                              2026-01-01_Mietvertrag
-                            </code>
-                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">
-                              2026-01-15_Vattenfall
-                            </code>
+                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">2026-01-01_Mietvertrag</code>
+                            <code class="font-mono text-xs text-gray-800 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">2026-01-15_Vattenfall</code>
                           </div>
                         </div>
                       </div>
@@ -1538,12 +1534,14 @@
 
                     <!-- Sonstiges -->
                     <div class="border-t border-gray-100 pt-3">
-                      <div class="flex flex-col sm:flex-row sm:items-start gap-3">
-                        <span class="w-max sm:min-w-[92px] text-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold flex-shrink-0">
-                          Sonstiges
-                        </span>
+                      <div class="grid grid-cols-1 sm:grid-cols-[140px_minmax(0,1fr)] gap-3">
+                        <div>
+                          <span class="inline-flex w-full justify-center px-3 py-1 rounded-full bg-gray-100 text-blue-900 border border-gray-200 text-xs font-bold">
+                            Sonstiges
+                          </span>
+                        </div>
 
-                        <div class="min-w-0 flex-1">
+                        <div class="min-w-0">
                           <p class="text-sm text-gray-600">
                             Sonstige Unterlagen, privat bezahlte Belege mit geschäftlichem Bezug oder Fälle, bei denen der richtige Belegtyp unklar ist.
                           </p>
